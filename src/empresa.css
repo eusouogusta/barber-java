@@ -1,0 +1,91 @@
+/* index.css */
+
+:root {
+  --orange-main: rgb(255, 69, 0);
+  --light-orange: rgb(253, 140, 41);
+  --blue-main: rgb(0, 0, 67);
+  --brand-light: rgb(231, 231, 231);
+  --brand-light2: rgb(247, 247, 247);
+  --brand-dark: rgb(0, 0, 0);
+  --light-gray: rgb(157, 157, 157);
+  --brand-orange: rgb(251, 80, 37);
+  --light-blue: rgb(12, 12, 158);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: white;
+  background: linear-gradient(to right, #3498db, #ff4d00);
+  /* Cor de fundo */
+}
+
+section {
+  font-family: "Roboto", sans-serif;
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+}
+
+h1,
+h2,
+h3,
+strong {
+  font-family: "Roboto", sans-serif;
+  color: rgb(255, 69, 0);
+  /* Cor principal */
+}
+
+footer {
+  color: rgb(12, 12, 158);
+  text-align: center;
+  padding: 1px;
+  background-image: url(./imagens/logo.png);
+}
+
+p {
+  font-family: "Roboto", sans-serif;
+  margin-top: 1rem;
+}
+
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+  margin-inline: 9rem;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.botao {
+  font-family: "Roboto", sans-serif;
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 30px;
+  text-decoration: none;
+  background-color: rgb(255, 69, 0);
+  /* Cor de fundo verde /   color:rgb(255, 255, 255); / Cor do texto branco /   border-radius: 8rem; / Borda arredondada /   transition: background-color 0.3s ease; }  .botao:hover {   background-color: #c02d00; } .logo img {     width: 100%;     height: auto;     display: block;     width: 20%; / Ajuste o tamanho da imagem conforme necessário */
+  height: auto;
+  display: inline-block;
+  float: left;
+  border-radius: 8rem;
+}
+
+.logo {
+  text-align: center;
+}
+
+.logo img {
+  width: 100%;
+  height: auto;
+  display: block;
+  width: 20%; /* Ajuste o tamanho da imagem conforme necessário */
+  height: auto;
+  display: inline-block;
+  float: left;
+}
