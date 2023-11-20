@@ -1,6 +1,4 @@
 <h1 align = center> Trackerz <h1>
-
-
   ## Proposta 👀
  <p align = center>
   <img width ="600px" src="https://github.com/viviangfreire/trackerz/blob/main/project%20goal%20screenshot.jpg">
