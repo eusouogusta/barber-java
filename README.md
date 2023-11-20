@@ -1,6 +1,6 @@
 <h1 align = center> Trackerz <h1>
 
-  ![Badge](https://img.shields.io/static/v1?label=DEVS&message=EquipePipoquinhas&color=ff4500&style=flat&logo=)
+  ![Badge](https://img.shields.io/static/v1?label=DEVS&color=ff4500&style=flat&logo=)
 
   ## Proposta 👀
  <p align = center>
