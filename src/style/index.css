@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Inclusive+Sans&family=Kanit:wght@600&family=Mooli&family=Quicksand:wght@700&family=Roboto:ital,wght@0,500;0,700;1,100&display=swap");
+
 :root {
     --background: 0 0% 100%;
     --foreground: 240 10% 3.9%;
@@ -22,13 +24,14 @@
 }
 
 body {
-    background-color: #13072e;
+    background-color: #ffffff;
     color: hsl(var(--foreground));
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
     margin: 0;
+    font-family: "Roboto", sans-serif;
 }
 
 .container {
@@ -44,12 +47,19 @@ header {
     width: 100%;
     background-color: #13072e;
     padding: 1rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
 }
 
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 1.5rem;
+    margin-inline: 9rem;
 }
 
 .nav-links {
@@ -70,6 +80,7 @@ header {
 .hero {
     text-align: center;
     margin: 2rem 0;
+    padding-top: 5rem; /* Espaço para a navbar fixa */
 }
 
 .hero h1 {

@@ -1,6 +1,6 @@
 * {
     margin: 0;
-    padding: 0;
+    padding: 12px;
     box-sizing: border-box;
 }
 
@@ -16,8 +16,10 @@ body {
 }
 
 .container {
-    width: 80%;
+    display: flex;
     margin: 0 auto;
+    align-items: center;
+    justify-content: center;
 }
 
 .navbar {
