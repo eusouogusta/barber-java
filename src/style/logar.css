@@ -11,12 +11,27 @@ body {
 }
 
 .login-container {
-    background-color: #1e1e2f;
-    padding: 40px;
+    background-color: white;
+    position: relative;
+    padding: 30px;
+    left: 5%;
+    border: 3px solid black;
     border-radius: 8px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
     width: 350px;
     text-align: center;
+}
+
+h2{
+    color: black;
+}
+
+h4{
+    color: black;
+}
+
+.input-group{
+    color: black;
 }
 
 .login-header h2 {
@@ -25,39 +40,73 @@ body {
 
 .login-header p {
     margin-bottom: 30px;
-    color: #b0b0b0;
+    color: black;
 }
 
 .input-group {
     margin-bottom: 20px;
     text-align: left;
+    
 }
 
 .input-group label {
     display: block;
     margin-bottom: 5px;
+    
 }
 
 .input-group input {
     width: 100%;
     padding: 10px;
-    border: none;
-    border-radius: 4px;
+    border-color: black;
+    border-radius: 5px;
     box-sizing: border-box;
+    
 }
 
 button {
-    width: 100%;
-    padding: 15px;
-    background-color: #ffcc00;
+    width: 50%;
+    padding: 10px;
+    background-color: #13072e;
     border: none;
-    border-radius: 4px;
-    color: #13072e;
+    border-radius: 10px;
+    color: white;
     font-size: 16px;
     cursor: pointer;
     margin-top: 20px;
 }
 
 button:hover {
-    background-color: #e6b800;
+    background-color: #13072e;
 }
+
+.img-logo {
+    height: 70vh;
+}
+
+.Logo-logar{
+    position: relative;
+    right: 40px;
+}
+
+.linha-ou {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 20px 0;
+  }
+  
+  .linha-ou::before,
+  .linha-ou::after {
+    content: "";
+    flex: 1;
+    border-bottom: 0.5px solid #000;
+    margin: 0 10px;
+  }
+  
+  .linha-ou span {
+    font-weight: bold; 
+    padding: 0 10px;
+    color: #000;
+    font-size: 14px;
+  }

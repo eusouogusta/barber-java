@@ -19,9 +19,9 @@
     --input: 240 5.9% 90%;
     --ring: 240 5.9% 10%;
     --radius: 0.5rem;
-  }
-  
-  body {
+}
+
+body {
     background-color: #13072e;
     color: hsl(var(--foreground));
     display: flex;
@@ -29,12 +29,13 @@
     align-items: center;
     min-height: 100vh;
     margin: 0;
-  }
-  
-  .corpo1{
+}
+
+.corpo1 {
     background-color: #13072e;
-  }
-  .container {
+}
+
+.container {
     background-color: #13072e;
     display: flex;
     flex-direction: column;
@@ -42,9 +43,9 @@
     justify-content: center;
     min-height: 100vh;
     color: hsl(var(--foreground));
-  }
-  
-  .formulario {
+}
+
+.formulario {
     background-color: #13072e;
     width: 100%;
     max-width: 28rem;
@@ -52,49 +53,37 @@
     background-color: hsl(var(--card));
     border-radius: 0.5rem;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  }
-  
-  .titulo {
+}
+
+.titulo {
     color: #ffffff;
     font-size: 1.5rem;
     font-weight: bold;
     text-align: center;
-  }
-  
-  .icon-large i {
-    font-size: 70px; /* Ajuste o valor para o tamanho desejado */
 }
 
-  .subtitulo {
+.subtitulo {
     color: #ffffff;
     text-align: center;
-  }
-  
-  .formulario {
-    background-color: black;
-    margin-top: 1.5rem;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-  }
-  
-  .label {
+}
+
+.label {
     color: #ffffff;
     display: block;
     font-size: 0.875rem;
     font-weight: medium;
-  }
-  
-  .input {
+}
+
+.input {
     margin-top: 0.25rem;
     display: block;
     width: 100%;
     border: 1px solid hsl(var(--border));
     border-radius: 0.375rem;
     padding: 0.5rem;
-  }
-  
-  .botao {
+}
+
+.botao {
     width: 100%;
     background-color: hsl(var(--primary));
     color: hsl(var(--primary-foreground));
@@ -102,32 +91,32 @@
     padding: 0.5rem;
     text-align: center;
     cursor: pointer;
-  }
-  
-  .botao:hover {
+}
+
+.botao:hover {
     background-color: rgba(var(--primary), 0.8);
-  }
-  
-  .botao-v{
+}
+
+.botao-v {
     position: absolute;
     top: 10dvh;
     left: 25dvh;
-  }
-  
-  .button-login {
-  position: absolute;
-  top: 10dvh; 
-  right: 25dvh; 
-  }
-  
-  .Corte{
+}
+
+.button-login {
+    position: absolute;
+    top: 10dvh; 
+    right: 25dvh; 
+}
+
+.Corte {
     position: absolute;
     bottom: 5dvh;
     left: 7dvh;
-  }
-  
-  .Bigode{
+}
+
+.Bigode {
     position: absolute;
     top: 33dvh;
     right: 6dvh;
-  }
+}

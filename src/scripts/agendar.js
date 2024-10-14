@@ -9,26 +9,36 @@ document.addEventListener('DOMContentLoaded', function () {
             dateInput.setAttribute('type', 'text');
             dateInput.classList.add('date-picker');
 
-            // Insere o input próximo ao botão clicado
+            // Cria um botão de confirmação
+            const confirmButton = document.createElement('button');
+            confirmButton.textContent = 'Confirmar';
+            confirmButton.classList.add('confirm-btn');
+
+            // Insere o input e o botão próximo ao botão clicado
             this.parentElement.appendChild(dateInput);
+            this.parentElement.appendChild(confirmButton);
 
             // Inicializa o Flatpickr para o novo input
             flatpickr(dateInput, {
                 enableTime: true,
                 dateFormat: "Y-m-d H:i",
-                minDate: "today",
-                onClose: function (selectedDates, dateStr) {
-                    if (dateStr) {
-                        // Salva o agendamento após selecionar a data
-                        saveAppointment(button, dateStr);
-                    }
-                    // Remove o date picker após selecionar a data
-                    dateInput.remove();
-                }
+                minDate: "today"
             });
 
-            // Abre o date picker imediatamente
-            dateInput.click();
+            // Evento de clique no botão de confirmação
+            confirmButton.addEventListener('click', function () {
+                const selectedDate = dateInput.value;
+                if (selectedDate) {
+                    // Salva o agendamento após o usuário confirmar
+                    saveAppointment(button, selectedDate);
+                } else {
+                    alert('Por favor, selecione uma data e hora.');
+                }
+
+                // Remove o input e o botão após a confirmação
+                dateInput.remove();
+                confirmButton.remove();
+            });
         });
     });
 });
