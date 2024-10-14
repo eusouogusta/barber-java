@@ -20,7 +20,7 @@ public class UsuarioController {
     @Autowired
     UsuarioService service;
 
-    @PostMapping("/usuarios")
+    @PostMapping("/register")
     public ResponseEntity<Object> criarUsuario(@Valid @RequestBody Usuario usuario){
         try{
             return ResponseEntity.status(HttpStatus.CREATED).body(service.criarUsuario(usuario));
