@@ -1,25 +1,31 @@
-* {
-    margin: 0;
-    padding: 12px;
-    box-sizing: border-box;
-}
-
+/* Estilo geral da página */
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f5f5f5;
-    color: #333;
-}
-
-.header {
-    background-color: #13072e;
-    padding: 20px 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #0C002B;
+    margin: 0;
+    padding: 0;
+    color: #FFFFFF;
 }
 
 .container {
-    display: flex;
+    max-width: 1200px;
     margin: 0 auto;
-    align-items: center;
-    justify-content: center;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #FFFFFF;
+    font-size: 32px;
+    font-weight: 600;
+    margin-bottom: 40px;
+}
+
+/* Estilo da navbar */
+.header {
+    background-color: #0C002B;
+    color: white;
+    padding: 10px 20px;
 }
 
 .navbar {
@@ -28,106 +34,121 @@ body {
     align-items: center;
 }
 
-.logo {
-    color: #fff;
+.navbar h1 {
+    margin: 0;
     font-size: 24px;
-    font-weight: bold;
-    text-decoration: none;
 }
 
-.nav-links {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-}
-
-.nav-links li a {
-    color: #fff;
-    text-decoration: none;
+.voltarBtn button {
+    background-color: #FFFFFF;
+    color: #0C002B;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
     font-size: 16px;
-    padding: 10px 20px;
-    border-radius: 5px;
-    transition: background 0.3s;
 }
 
-.nav-links li a:hover {
-    background-color: #666;
+.voltarBtn button:hover {
+    background-color: #E5E5E5;
 }
 
-.hero {
-    background-color: #4A4A5A;
-    color: white;
-    padding: 100px 0;
-    text-align: center;
-}
-
-.hero h1 {
-    font-size: 48px;
-    margin-bottom: 20px;
-}
-
-.hero p {
-    font-size: 20px;
-    margin-bottom: 30px;
-}
-
-.btn {
-    background-color: #FFD700;
-    color: #333;
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 5px;
+.perfil {
+    display: flex;
+    align-items: center;
+    color: #FFFFFF;
     font-size: 18px;
+}
+
+.icon-large {
+    font-size: 30px;
+    margin-left: 10px;
+}
+
+/* Estilo da tabela */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    color: #FFFFFF;
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #1C1C3A;
+}
+
+th {
+    background-color: #0C002B;
+    color: #FFFFFF;
+    font-size: 18px;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+td {
+    font-size: 16px;
+}
+
+/* Botão Agendar */
+.agendarBtn {
+    background-color: #FFFFFF;
+    color: #0C002B;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 16px;
     transition: background-color 0.3s;
 }
 
-.btn:hover {
-    background-color: #f9c00c;
+.agendarBtn:hover {
+    background-color: #E5E5E5;
 }
 
-.planos {
-    padding: 50px 0;
-    background-color: #fff;
-    text-align: center;
-}
-
-.planos h2 {
-    font-size: 36px;
-    margin-bottom: 30px;
-}
-
-.planos-grid {
-    display: flex;
-    justify-content: space-between;
-    gap: 20px;
-}
-
-.plano {
-    background-color: #eee;
-    padding: 20px;
-    border-radius: 10px;
-    width: 30%;
-}
-
-.plano h3 {
-    font-size: 24px;
-    margin-bottom: 15px;
-}
-
-.plano p {
-    font-size: 16px;
-    margin-bottom: 15px;
-}
-
-.preco {
-    font-size: 20px;
-    font-weight: bold;
-}
-
+/* Rodapé */
 footer {
-    background-color: #4A4A5A;
-    color: #fff;
-    padding: 20px 0;
     text-align: center;
-    margin-top: 50px;
+    padding: 20px;
+    background-color: #0C002B;
+    color: white;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+.reserved {
+    margin: 0;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    th, td {
+        font-size: 14px;
+    }
+
+    .voltarBtn button {
+        font-size: 14px;
+    }
+
+    .agendarBtn {
+        font-size: 14px;
+        padding: 8px 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    th, td {
+        font-size: 12px;
+    }
+
+    .voltarBtn button {
+        font-size: 12px;
+    }
+
+    .agendarBtn {
+        font-size: 12px;
+        padding: 6px 10px;
+    }
 }
