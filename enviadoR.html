@@ -10,7 +10,7 @@
 </head>
 <body class="corpo1">
   <div class="botao-v">
-    <button class="btn btn-light"><i class="bi bi-arrow-left"></i> Voltar</button>
+    <button class="btn btn-light" id="backButton"><i class="bi bi-arrow-left"></i> Voltar</button>
   </div>
   <img class="Corte" src="/Imagens/Corte.png" style="width: 450px; height: auto;" alt="Corte">
   <div class="container">
@@ -21,5 +21,12 @@
   </div>
   <img class="Bigode" src="/Imagens/bigode.jpeg" style="width: 400px; height: auto;" alt="Bigode">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  
+  <script>
+    // Redireciona para a página de login ao clicar no botão "Voltar"
+    document.getElementById('backButton').addEventListener('click', function() {
+        window.location.href = "logar.html"; // Altere para a página de login ou qualquer outra que desejar
+    });
+  </script>
 </body>
 </html>
