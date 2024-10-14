@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Página Inicial</title>
     <link rel="stylesheet" href="src/style/index.css">
 </head>
+
 <body>
     <header class="header">
         <div class="container">
@@ -15,8 +17,8 @@
                     <ul class="nav-links">
                         <li><a href="#">Serviços</a></li>
                         <li><a href="#">Sobre</a></li>
-                        <li><a href="agendamento.html">consultar agendamento</a></li>
-                        <li><a href="agendar.html" class="btn">login</a></li>
+                        <li><a href="agendamento.html">Consultar Agendamento</a></li>
+                        <li><a href="agendar.html" class="btn">Login</a></li>
                     </ul>
                 </nav>
             </div>
@@ -38,10 +40,22 @@
         </div>
     </section>
 
+    <!-- Seção de Serviços -->
+    <section class="services">
+        <div class="container">
+            <h2>Nossos Serviços</h2>
+            <ul id="servicosList"></ul> <!-- Lista para exibir serviços -->
+        </div>
+    </section>
+
     <footer>
         <div class="container">
             <p>&copy; 2024 Barbearia. Todos os direitos reservados.</p>
         </div>
     </footer>
+
+    <!-- Importando o script da API -->
+    <script src="src/scripts/api-index.js"></script>
 </body>
+
 </html>
