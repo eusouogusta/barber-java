@@ -1,110 +1,126 @@
-@import url("https://fonts.googleapis.com/css2?family=Inclusive+Sans&family=Kanit:wght@600&family=Mooli&family=Quicksand:wght@700&family=Roboto:ital,wght@0,500;0,700;1,100&display=swap");
-
-:root {
-    --background: 0 0% 100%;
-    --foreground: 240 10% 3.9%;
-    --card: 0 0% 100%;
-    --card-foreground: 240 10% 3.9%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 240 10% 3.9%;
-    --primary: 240 5.9% 10%;
-    --primary-foreground: 0 0% 98%;
-    --secondary: 240 4.8% 95.9%;
-    --secondary-foreground: 240 5.9% 10%;
-    --muted: 240 4.8% 95.9%;
-    --muted-foreground: 240 3.8% 46.1%;
-    --accent: 240 4.8% 95.9%;
-    --accent-foreground: 240 5.9% 10%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 240 5.9% 90%;
-    --input: 240 5.9% 90%;
-    --ring: 240 5.9% 10%;
-    --radius: 0.5rem;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
 }
 
 body {
-    background-color: #ffffff;
-    color: hsl(var(--foreground));
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    margin: 0;
-    font-family: "Roboto", sans-serif;
+    background-color: #0b0024;
+    color: white;
+    line-height: 1.6;
 }
 
 .container {
-    background-color: #13072e;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    color: hsl(var(--foreground));
+    width: 90%;
+    margin: auto;
 }
 
-header {
-    width: 100%;
-    background-color: #13072e;
-    padding: 1rem;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1000;
+.header {
+    background-color: #0b0024;
+    padding: 1rem 0;
+    position: relative;
 }
 
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1.5rem;
-    margin-inline: 9rem;
+}
+
+.logo img {
+    width: 100px;
 }
 
 .nav-links {
-    list-style-type: none;
-    padding: 0;
+    list-style: none;
+    display: flex;
+    gap: 20px;
 }
 
-.nav-links li {
-    display: inline;
-    margin-left: 1rem;
-}
-
-.nav-links a {
-    color: hsl(var(--primary-foreground));
+.nav-links li a {
+    color: white;
     text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+    color: #b197fc;
+}
+
+.btn-login {
+    padding: 0.5rem 1rem;
+    background-color: white;
+    color: #0b0024;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
 }
 
 .hero {
-    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5rem 0;
+    background: linear-gradient(to right, #0b0024 50%, #301472 50%);
+    border-radius: 20px;
     margin: 2rem 0;
-    padding-top: 5rem; /* Espaço para a navbar fixa */
+}
+
+.hero-content {
+    max-width: 50%;
+}
+
+.hashtag {
+    background-color: #b197fc;
+    padding: 0.2rem 1rem;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #0b0024;
+    margin-bottom: 1rem;
+    display: inline-block;
 }
 
 .hero h1 {
-    font-size: 2rem;
-    margin-bottom: 0.5rem;
+    font-size: 36px;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
 }
 
 .hero p {
-    font-size: 1rem;
+    font-size: 18px;
+    margin-bottom: 1.5rem;
 }
 
-.btn {
-    background-color: hsl(var(--primary));
-    color: hsl(var(--primary-foreground));
-    padding: 0.5rem 1rem;
-    border-radius: 0.5rem;
+.hero-image img {
+    border-radius: 15px;
+    width: 400px;
+}
+
+.btn-schedule {
+    padding: 0.8rem 1.5rem;
+    background-color: white;
+    color: #0b0024;
     text-decoration: none;
+    font-weight: bold;
+    border-radius: 30px;
+    transition: background-color 0.3s ease;
 }
 
-.btn:hover {
-    background-color: rgba(var(--primary), 0.8);
+.btn-schedule:hover {
+    background-color: #b197fc;
 }
 
 footer {
-    margin-top: 2rem;
+    background-color: #0b0024;
     text-align: center;
+    padding: 1rem 0;
+    margin-top: 2rem;
+}
+
+footer p {
+    color: white;
 }
