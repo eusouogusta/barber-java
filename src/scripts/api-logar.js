@@ -6,7 +6,7 @@ async function login(username, password) {
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify({ username, password }),
+            body: JSON.stringify({ email: username, senha: password }), // Altere para 'email' e 'senha' conforme esperado pelo backend
         });
 
         if (!response.ok) {
@@ -15,9 +15,8 @@ async function login(username, password) {
 
         const data = await response.json();
         console.log('Login bem-sucedido:', data);
-        // Aqui você pode redirecionar o usuário ou armazenar o token
-        // Exemplo de redirecionamento:
-        window.location.href = "agendar.html"; // Redirecionar para a página de agendamento
+        // Redireciona o usuário para a página de agendamento após o login
+        window.location.href = "agendar.html";
 
     } catch (error) {
         console.error('Erro:', error);
@@ -25,7 +24,7 @@ async function login(username, password) {
     }
 }
 
-// Chame a função quando o formulário for enviado
+// Chama a função quando o formulário de login for enviado
 document.getElementById('loginForm').addEventListener('submit', function (event) {
     event.preventDefault(); // Previne o envio padrão do formulário
     const username = document.getElementById('username').value;
