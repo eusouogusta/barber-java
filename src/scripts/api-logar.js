@@ -6,7 +6,7 @@ async function login(username, password) {
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify({ email: username, senha: password }), // Altere para 'email' e 'senha' conforme esperado pelo backend
+            body: JSON.stringify({ email: username, senha: password }), // Ajuste conforme esperado pelo backend
         });
 
         if (!response.ok) {
