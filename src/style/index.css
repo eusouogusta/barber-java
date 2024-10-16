@@ -35,7 +35,7 @@ body {
 .nav-links {
     list-style: none;
     display: flex;
-    gap: 20px;
+    gap: 30px;
 }
 
 .nav-links li a {
@@ -57,27 +57,31 @@ body {
     text-decoration: none;
     font-size: 16px;
     font-weight: bold;
+    border: none;
 }
 
 .hero {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 5rem 0;
-    background: linear-gradient(to right, #0b0024 50%, #301472 50%);
+    padding: 3rem 0; /* Menor espaçamento para menos cobertura de tela */
+    background-color: #301472;
     border-radius: 20px;
     margin: 2rem 0;
+    flex-wrap: nowrap;
 }
 
 .hero-content {
     max-width: 50%;
+    flex: 1;
+    padding-right: 20px;
 }
 
 .hashtag {
     background-color: #b197fc;
     padding: 0.2rem 1rem;
     border-radius: 20px;
-    font-size: 14px;
+    font-size: 16px; /* Aumentando o tamanho da hashtag */
     font-weight: bold;
     color: #0b0024;
     margin-bottom: 1rem;
@@ -85,19 +89,27 @@ body {
 }
 
 .hero h1 {
-    font-size: 36px;
+    font-size: 48px; /* Tamanho maior do título */
     margin-bottom: 1rem;
     text-transform: uppercase;
+    line-height: 1.2;
 }
 
 .hero p {
-    font-size: 18px;
-    margin-bottom: 1.5rem;
+    font-size: 20px; /* Texto maior */
+    margin-bottom: 2rem;
+}
+
+.hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
 }
 
 .hero-image img {
     border-radius: 15px;
-    width: 400px;
+    max-width: 400px; /* Mantém a imagem em tamanho mais proporcional */
+    height: auto;
 }
 
 .btn-schedule {
