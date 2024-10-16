@@ -1,3 +1,4 @@
+
 :root {
   --background: 0 0% 100%;
   --foreground: 240 10% 3.9%;
@@ -95,12 +96,11 @@ body {
 }
 
 .botao {
-
   width: 100%;
   background-color: hsl(var(--primary));
   color: hsl(var(--primary-foreground));
-  border-radius: 0.5rem;
-  margin-top: 15px; 
+  border-radius: 10rem 30rem;
+  margin-top: 20px;
   padding: 0.5rem;
   text-align: center;
   cursor: pointer;
@@ -108,7 +108,7 @@ body {
 
 .botao:hover {
   background-color: rgba(var(--primary), 0.8);
-}
+} 
 
 .botao-v{
   position: absolute;
@@ -123,13 +123,14 @@ right: 25dvh;
 }
 
 .Corte{
+  opacity: 93%;
   position: absolute;
-  bottom: 5dvh;
-  left: 7dvh;
+  bottom: 2rem;
+  left: 2rem;
 }
 
 .Bigode{
   position: absolute;
-  top: 33dvh;
-  right: 6dvh;
+  top: 5rem;
+  right: 1rem;
 }
