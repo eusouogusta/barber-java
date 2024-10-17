@@ -32,7 +32,12 @@ document.addEventListener('DOMContentLoaded', function () {
                   // Salva o agendamento após o usuário confirmar
                   saveAppointment(button, selectedDate);
               } else {
-                  alert('Por favor, selecione uma data e hora.');
+                  Swal.fire({
+                      title: 'Erro',
+                      text: 'Por favor, selecione uma data e hora.',
+                      icon: 'error',
+                      confirmButtonText: 'Ok'
+                  });
               }
 
               // Remove o input e o botão após a confirmação
@@ -43,7 +48,7 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 
-// Função para salvar o agendamento
+// Função para salvar o agendamento com SweetAlert2
 async function saveAppointment(button, dateStr) {
   const service = button.closest('tr').querySelector('td:first-child').textContent.trim();
   const appointments = JSON.parse(localStorage.getItem('appointments')) || [];
@@ -60,15 +65,22 @@ async function saveAppointment(button, dateStr) {
   // Salva a lista atualizada no localStorage
   localStorage.setItem('appointments', JSON.stringify(appointments));
 
-  // Exibe uma mensagem de confirmação
-  alert(`Agendamento para "${service}" confirmado para o dia e hora: ${dateStr}`);
-
-  // Aqui você pode adicionar a chamada para agendar no backend
+  // Chama a função para agendar no backend
   const usuarioId = 1; // Substitua pelo ID do usuário logado
-  await agendarServico(dateStr, service, usuarioId);
+  const sucesso = await agendarServico(dateStr, service, usuarioId);
+
+  // Exibe a mensagem de confirmação apenas se o agendamento no backend for bem-sucedido
+  if (sucesso) {
+      Swal.fire({
+          title: 'Agendamento Confirmado!',
+          text: `Agendamento para "${service}" confirmado para o dia e hora: ${dateStr}`,
+          icon: 'success',
+          confirmButtonText: 'Ok'
+      });
+  }
 }
 
-// Função para agendar um serviço
+// Função para agendar um serviço no backend
 async function agendarServico(data, servico, usuarioId) {
   try {
       const response = await fetch('http://localhost:8080/agendar', {
@@ -85,8 +97,15 @@ async function agendarServico(data, servico, usuarioId) {
 
       const dataResponse = await response.json();
       console.log('Agendamento bem-sucedido:', dataResponse);
-      // Aqui você pode redirecionar o usuário ou mostrar uma mensagem de sucesso
+      return true; // Indica que o agendamento foi bem-sucedido
   } catch (error) {
+      Swal.fire({
+          title: 'Erro',
+          text: 'Erro ao agendar serviço. Tente novamente mais tarde.',
+          icon: 'error',
+          confirmButtonText: 'Ok'
+      });
       console.error('Erro:', error);
+      return false; // Indica que houve um erro no agendamento
   }
 }
