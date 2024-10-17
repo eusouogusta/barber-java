@@ -12,14 +12,12 @@ body {
 }
 
 .container {
-    width: 90%;
+    width: 85%;
     margin: auto;
 }
 
 .header {
-    background-color: #0b0024;
-    padding: 1rem 0;
-    position: relative;
+    padding: 1.5rem 0;
 }
 
 .navbar {
@@ -28,20 +26,34 @@ body {
     align-items: center;
 }
 
+.logo-section {
+    display: flex;
+    align-items: center;
+}
+
 .logo img {
-    width: 100px;
+    width: 150px;
+    margin-right: 10px; /* Espaço entre logo e nome da barbearia */
+}
+
+.barbershop-name {
+    font-size: 26px;
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
 }
 
 .nav-links {
     list-style: none;
     display: flex;
-    gap: 30px;
+    gap: 20px; /* Diminuindo o espaçamento entre links */
 }
 
 .nav-links li a {
     color: white;
     text-decoration: none;
-    font-size: 18px;
+    font-size: 20px;
+    font-weight: bold;
     transition: color 0.3s ease;
 }
 
@@ -49,75 +61,51 @@ body {
     color: #b197fc;
 }
 
-.btn-login {
-    padding: 0.5rem 1rem;
-    background-color: white;
-    color: #0b0024;
-    border-radius: 20px;
-    text-decoration: none;
-    font-size: 16px;
-    font-weight: bold;
-    border: none;
-}
-
 .hero {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 3rem 0; /* Menor espaçamento para menos cobertura de tela */
-    background-color: #301472;
-    border-radius: 20px;
-    margin: 2rem 0;
-    flex-wrap: nowrap;
+    padding: 2.5rem 0;
+    background-color: #0b0024;
+    color: white;
+    margin-top: 1.5rem;
 }
 
 .hero-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.hero-text {
     max-width: 50%;
-    flex: 1;
-    padding-right: 20px;
 }
 
-.hashtag {
-    background-color: #b197fc;
-    padding: 0.2rem 1rem;
-    border-radius: 20px;
-    font-size: 16px; /* Aumentando o tamanho da hashtag */
-    font-weight: bold;
-    color: #0b0024;
-    margin-bottom: 1rem;
-    display: inline-block;
-}
-
-.hero h1 {
-    font-size: 48px; /* Tamanho maior do título */
+.hero-text h1 {
+    font-size: 56px; /* Aumentando o tamanho do título */
     margin-bottom: 1rem;
     text-transform: uppercase;
     line-height: 1.2;
 }
 
-.hero p {
-    font-size: 20px; /* Texto maior */
+.hero-text p {
+    font-size: 22px; /* Aumentando o tamanho do texto */
     margin-bottom: 2rem;
 }
 
-.hero-image {
-    flex: 1;
-    display: flex;
-    justify-content: flex-end;
-}
-
 .hero-image img {
-    border-radius: 15px;
-    max-width: 400px; /* Mantém a imagem em tamanho mais proporcional */
+    max-width: 550px; /* Aumentando a largura da imagem */
     height: auto;
+    border-radius: 15px;
 }
 
 .btn-schedule {
-    padding: 0.8rem 1.5rem;
+    padding: 1rem 2.5rem; /* Aumentando o tamanho do botão */
     background-color: white;
     color: #0b0024;
     text-decoration: none;
     font-weight: bold;
+    font-size: 20px; /* Aumentando o texto do botão */
     border-radius: 30px;
     transition: background-color 0.3s ease;
 }

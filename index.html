@@ -1,24 +1,25 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Página Iniciall</title>
+    <title>Barbearia Prestee</title>
     <link rel="stylesheet" href="src/style/index.css">
 </head>
-
 <body>
     <header class="header">
         <div class="container">
             <div class="navbar">
-                <a href="#" class="logo"><img src="Logos/image/Logo-st.png" alt="Logo da Empresa"></a> <!-- Adicione o logo -->
+                <div class="logo-section">
+                    <a href="#" class="logo"><img src="Logos/image/Logo-st.png" alt="Logo da Barbearia"></a>
+                    <span class="barbershop-name">PRESTEE</span>
+                </div>
                 <nav>
                     <ul class="nav-links">
                         <li><a href="#">Início</a></li>
-                        <li><a href="#">Contato/Localização</a></li>
-                        <li><a href="agendar.html">Consultar Agendamento</a></li>
-                        <li><a href="logar.html" class="btn-login">Login</a></li>
+                        <li><a href="#">Agendar</a></li>
+                        <li><a href="#">Localização</a></li>
+                        <li><a href="#">Contato</a></li>
                     </ul>
                 </nav>
             </div>
@@ -26,15 +27,14 @@
     </header>
 
     <section class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <span class="hashtag">#barbeariaprestee</span>
-                <h1>BARBEARIA PRESTEE</h1>
-                <p>Na Barbearia Prestee, combinamos tradição e modernidade para oferecer cortes precisos e barbas alinhadas. Nossa equipe de barbeiros experientes garante um atendimento personalizado em um ambiente acolhedor e estiloso. Venha viver uma experiência única de cuidado masculino.</p>
-                <a href="agendar.html" class="btn-schedule">Faça seu agendamento</a>
+        <div class="container hero-content">
+            <div class="hero-text">
+                <h1 class="subtitle"><b>A MELHOR<br> BARBEARIA<br> DA CIDADE</h1></b>
+                <p>Na Barbearia Prestee, combinamos tradição e modernidade para oferecer cortes precisos e barbas alinhadas.<br> Nossa equipe de barbeiros experientes garante um atendimento personalizado<br> em um ambiente acolhedor e estiloso.<br> Venha viver uma experiência única de cuidado masculino.</p>
+                <a href="agendar.html" class="btn-schedule">AGENDAR SEU CORTE</a>
             </div>
             <div class="hero-image">
-                <img src="Logos/image/barbeiro.jpg" alt="Imagem de um barbeiro cortando o cabelo de uma criança">
+                <img src="Logos/image/personagem.png" alt="Imagem de um barbeiro estilizado">
             </div>
         </div>
     </section>
@@ -45,8 +45,6 @@
         </div>
     </footer>
 
-    <!-- Importando o script da API -->
-    <script src="src/scripts/api-index.js"></script>
+    <script src="src/scripts/api-index.js"></script> <!-- Importando a API -->
 </body>
-
 </html>
