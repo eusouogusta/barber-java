@@ -15,12 +15,28 @@ async function login(username, password) {
 
         const data = await response.json();
         console.log('Login bem-sucedido:', data);
-        // Redireciona o usuário para a página de agendamento após o login
-        window.location.href = "agendar.html";
+
+        // Exibe mensagem de sucesso usando SweetAlert2
+        Swal.fire({
+            icon: 'success',
+            title: 'Bem-vindo!',
+            text: 'Login realizado com sucesso.',
+            confirmButtonText: 'OK'
+        }).then(() => {
+            // Redireciona o usuário para a página de agendamento após o login
+            window.location.href = "agendar.html";
+        });
 
     } catch (error) {
         console.error('Erro:', error);
-        alert('Usuário ou senha incorretos');
+
+        // Exibe mensagem de erro usando SweetAlert2
+        Swal.fire({
+            icon: 'error',
+            title: 'Erro',
+            text: 'Usuário ou senha incorretos. Por favor, tente novamente.',
+            confirmButtonText: 'OK'
+        });
     }
 }
 
