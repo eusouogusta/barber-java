@@ -59,6 +59,61 @@ document.getElementById('registerForm').addEventListener('submit', function (eve
     register(name, email, password);
 });
 
+
+
+async function register(name, email, password, confirmPassword) {
+    try {
+        const response = await fetch('http://localhost:8080/register', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ nome: name, email, senha: password, repeticaoSenha: confirmPassword }), // Incluindo repeticaoSenha
+        });
+
+        if (!response.ok) {
+            const errorData = await response.text(); // Captura a mensagem de erro
+            throw new Error(`Erro ao cadastrar: ${errorData}`);
+        }
+
+        const data = await response.json();
+      //  console.log('Cadastro bem-sucedido:', data);
+        // Aqui você pode redirecionar o usuário ou exibir uma mensagem de sucesso
+         // Exibir mensagem de sucesso
+         Swal.fire({
+            icon: 'success',
+            title: 'Cadastro realizado com sucesso!',
+            text: `Bem-vindo, ${name}! Você pode fazer login agora.`,
+            confirmButtonText: 'OK'
+        });
+
+    } catch (error) {
+        console.error('Erro:', error);
+    }
+}
+
+// Chame a função quando o formulário for enviado
+document.querySelector('.formulario').addEventListener('submit', function (event) {
+    event.preventDefault();
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
+    const confirmPassword = document.getElementById('confirm-password').value;
+
+    // Verificar se as senhas correspondem
+    if (password !== confirmPassword) {
+        Swal.fire({
+            icon: 'warning',
+            title: 'Atenção!',
+            text: 'As senhas não correspondem!',
+            confirmButtonText: 'OK'
+        });
+        return;
+    }
+
+    register(name, email, password, confirmPassword); // Passando confirmPassword
+});
+
 // Evento para o botão "Voltar"
 document.getElementById("backButton").addEventListener("click", function() {
     window.history.back(); // Retorna à página anterior
