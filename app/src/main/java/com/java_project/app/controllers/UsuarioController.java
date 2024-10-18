@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.Collections;
+
 @RestController
 @CrossOrigin("*")
 public class UsuarioController {
@@ -26,10 +28,10 @@ public class UsuarioController {
             return ResponseEntity.status(HttpStatus.CREATED).body(service.criarUsuario(usuario));
         }
         catch (UsuarioEmaileSenhaNulaouVaziaException e){
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(Collections.singletonMap("message", e.getMessage()));
         }
         catch (UsuarioOuEmailExistenteException e){
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(Collections.singletonMap("message", e.getMessage()));
         }
     }
 

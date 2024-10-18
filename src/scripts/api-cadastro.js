@@ -6,13 +6,17 @@ async function register(name, email, password, confirmPassword) {
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify({ nome: name, email: email, senha: password, repeticaoSenha: confirmPassword }), // Incluindo repeticaoSenha
+            body: JSON.stringify({
+                nome: name,
+                email: email,
+                senha: password,
+                repeticaoSenha: confirmPassword
+            }),
         });
 
         if (!response.ok) {
             const errorData = await response.json(); // Captura a mensagem de erro detalhada do backend
-            handleError(errorData.message); // Passa a mensagem de erro para a função de tratamento de erro
-            throw new Error(`Erro ao cadastrar: ${errorData.message}`);
+            throw new Error(errorData.message || "Erro desconhecido"); // Lança o erro com a mensagem do backend
         }
 
         const data = await response.json();
@@ -26,30 +30,17 @@ async function register(name, email, password, confirmPassword) {
 
     } catch (error) {
         console.error('Erro:', error);
+        handleError(error.message); // Passa a mensagem de erro para a função de tratamento de erro
     }
 }
 
 // Função para lidar com erros específicos do backend
 function handleError(message) {
-    let errorMessage = '';
-
-    if (message.includes('nome')) {
-        errorMessage = 'O nome não pode ser nulo ou já existe em nossa base de dados.';
-    } else if (message.includes('email inválido')) {
-        errorMessage = 'O formato do email é inválido.';
-    } else if (message.includes('email já existe')) {
-        errorMessage = 'Esse email já existe em nossa base de dados.';
-    } else if (message.includes('senha')) {
-        errorMessage = 'A senha não pode ser nula ou deve corresponder à repetição.';
-    } else {
-        errorMessage = 'Houve um problema ao cadastrar. Tente novamente.';
-    }
-
     // Exibir mensagem de erro usando SweetAlert2
     Swal.fire({
         icon: 'error',
         title: 'Erro ao cadastrar',
-        text: errorMessage,
+        text: message, // Usa a mensagem de erro recebida do backend
         confirmButtonText: 'OK'
     });
 }
