@@ -1,16 +1,17 @@
 // Função para realizar login
-async function login(username, password) {
+async function login(email, password) {
     try {
         const response = await fetch('http://localhost:8080/login', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify({ email: username, senha: password }), // Ajuste conforme esperado pelo backend
+            body: JSON.stringify({ email: email, senha: password }), // Ajuste conforme esperado pelo backend
         });
 
         if (!response.ok) {
-            throw new Error('Erro ao realizar login');
+            const errorData = await response.json(); // Captura a mensagem de erro do backend
+            throw new Error(errorData.message || 'Erro ao realizar login'); // Lança o erro com a mensagem do backend
         }
 
         const data = await response.json();
@@ -34,7 +35,7 @@ async function login(username, password) {
         Swal.fire({
             icon: 'error',
             title: 'Erro',
-            text: 'Usuário ou senha incorretos. Por favor, tente novamente.',
+            text: error.message || 'Usuário ou senha incorretos. Por favor, tente novamente.', // Usa a mensagem do backend
             confirmButtonText: 'OK'
         });
     }
@@ -43,7 +44,7 @@ async function login(username, password) {
 // Chama a função quando o formulário de login for enviado
 document.getElementById('loginForm').addEventListener('submit', function (event) {
     event.preventDefault(); // Previne o envio padrão do formulário
-    const username = document.getElementById('username').value;
+    const email = document.getElementById('username').value; // Alterado para 'email' para melhor clareza
     const password = document.getElementById('password').value;
-    login(username, password);
+    login(email, password);
 });

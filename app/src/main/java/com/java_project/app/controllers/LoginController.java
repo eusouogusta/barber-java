@@ -8,6 +8,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Collections;
+
 @RestController
 @CrossOrigin("*")
 public class LoginController {
@@ -19,12 +21,12 @@ public class LoginController {
     public ResponseEntity<Object> realizarAutenticacao(@RequestBody Login login){
         Usuario usuario = repository.findByEmail(login.getEmail());
        if(usuario == null){
-           return ResponseEntity.status(HttpStatus.NOT_FOUND).body("esse email não esta cadastrado");
+           return ResponseEntity.status(HttpStatus.NOT_FOUND).body(Collections.singletonMap("message","esse email não esta cadastrado"));
        }
        if(!login.getSenha().equals(usuario.getSenha())){
-           return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("senha inválida");
+           return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(Collections.singletonMap("message","senha inválida"));
        }
 
-       return  ResponseEntity.status(HttpStatus.OK).body("login efetivado");
+       return  ResponseEntity.status(HttpStatus.OK).body(Collections.singletonMap("message","login efetivado"));
     }
 }
