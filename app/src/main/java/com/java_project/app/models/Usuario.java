@@ -30,4 +30,8 @@ public class Usuario {
     private String senha;
     @Transient
     private String repeticaoSenha ;
+
+    //ASSOCIACAO
+    @OneToOne(mappedBy = "usuario")
+    private Agendamento agendamento;
 }
