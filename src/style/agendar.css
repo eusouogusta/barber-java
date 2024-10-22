@@ -106,6 +106,22 @@ td {
 .agendarBtn:hover {
     background-color: #E5E5E5;
 }
+/* mudar butao de confirmar agendamento */
+.swal2-styled-button {
+    background-color: #3085d6;  /* Azul */
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.swal2-styled-button:hover {
+    background-color: #2563ad;  /* Cor mais escura ao passar o mouse */
+}
+
 
 /* Rodapé */
 footer {
