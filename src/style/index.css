@@ -17,6 +17,7 @@ body {
 }
 
 .header {
+    background: linear-gradient(to bottom, #1a0454, #0b0024);
     padding: 0rem;
 }
 
@@ -47,11 +48,13 @@ body {
     text-decoration: none;
     font-size: 25px;
     font-weight: bold;
-    transition: color 0.3s ease;
+    transition: color 0.3s ease, border-bottom 0.3s ease; /* Adicionando transição para o efeito da barra */
+    border-bottom: 3px solid transparent; /* Barra invisível inicialmente */
 }
 
 .nav-links li a:hover {
     color: #b197fc;
+    border-bottom: 3px solid #b197fc; /* Barra visível ao passar o cursor */
 }
 
 
