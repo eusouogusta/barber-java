@@ -17,7 +17,7 @@ body {
 }
 
 .header {
-    padding: 1.5rem 0;
+    padding: 0rem;
 }
 
 .navbar {
@@ -32,27 +32,20 @@ body {
 }
 
 .logo img {
-    width: 150px;
-    margin-right: 10px; /* Espaço entre logo e nome da barbearia */
-}
-
-.barbershop-name {
-    font-size: 26px;
-    color: white;
-    font-weight: bold;
-    text-transform: uppercase;
+    margin-top: 0px;
+    width: 170px;
 }
 
 .nav-links {
     list-style: none;
     display: flex;
-    gap: 20px; /* Diminuindo o espaçamento entre links */
+    gap: 50px; /* Diminuindo o espaçamento entre links */
 }
 
 .nav-links li a {
     color: white;
     text-decoration: none;
-    font-size: 20px;
+    font-size: 25px;
     font-weight: bold;
     transition: color 0.3s ease;
 }
@@ -61,14 +54,17 @@ body {
     color: #b197fc;
 }
 
+
 .hero {
     display: flex;
+    align-items: flex-start; /* Alinha o conteúdo no topo */
     justify-content: space-between;
     align-items: center;
-    padding: 2.5rem 0;
+    padding: 1rem 0;
     background-color: #0b0024;
     color: white;
-    margin-top: 1.5rem;
+    margin-top: 0rem;
+    
 }
 
 .hero-content {
@@ -78,23 +74,24 @@ body {
 }
 
 .hero-text {
-    max-width: 50%;
+    margin-top: 0; /* Remove qualquer margem extra no topo */
+    max-width: 70%;
 }
 
 .hero-text h1 {
-    font-size: 56px; /* Aumentando o tamanho do título */
-    margin-bottom: 1rem;
+    font-size:50px; /* Aumentando o tamanho do título */
+    margin-bottom: 0rem;
     text-transform: uppercase;
     line-height: 1.2;
 }
 
 .hero-text p {
-    font-size: 22px; /* Aumentando o tamanho do texto */
-    margin-bottom: 2rem;
+    font-size: 25px; /* Aumentando o tamanho do texto */
+    margin-bottom: 1rem;
 }
 
 .hero-image img {
-    max-width: 550px; /* Aumentando a largura da imagem */
+    max-width: 450px; /* Aumentando a largura da imagem */
     height: auto;
     border-radius: 15px;
 }
@@ -117,8 +114,8 @@ body {
 footer {
     background-color: #0b0024;
     text-align: center;
-    padding: 1rem 0;
-    margin-top: 2rem;
+    padding: 0rem 0;
+    margin-top: 0rem;
 }
 
 footer p {
