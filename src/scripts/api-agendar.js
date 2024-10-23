@@ -4,6 +4,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
     agendarButtons.forEach(button => {
         button.addEventListener('click', function () {
+            // Verifica se já existe um calendário aberto para este botão
+            if (this.classList.contains('calendario-aberto')) {
+                return;  // Se já estiver aberto, não faz nada
+            }
+
+            // Adiciona a classe 'calendario-aberto' para marcar que o calendário foi aberto
+            this.classList.add('calendario-aberto');
+
             // Cria um input temporário para o date picker
             const dateInput = document.createElement('input');
             dateInput.setAttribute('type', 'text');
@@ -28,7 +36,7 @@ document.addEventListener('DOMContentLoaded', function () {
             });
 
             // Evento de clique no botão de confirmação
-            confirmButton.addEventListener('click', async function () {
+            confirmButton.addEventListener('click', async () => {
                 const selectedDate = dateInput.value;
                 if (selectedDate) {
                     // Salva o agendamento após o usuário confirmar
@@ -42,9 +50,10 @@ document.addEventListener('DOMContentLoaded', function () {
                     });
                 }
 
-                // Remove o input e o botão após a confirmação
+                // Remove o input, o botão e a classe 'calendario-aberto' após a confirmação
                 dateInput.remove();
                 confirmButton.remove();
+                this.classList.remove('calendario-aberto');
             });
         });
     });
