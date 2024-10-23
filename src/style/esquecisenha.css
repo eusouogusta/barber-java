@@ -56,19 +56,19 @@ body {
 }
 
 .titulo {
-    color: #ffffff;
+    color: #000000;
     font-size: 1.5rem;
     font-weight: bold;
     text-align: center;
 }
 
 .subtitulo {
-    color: #ffffff;
+    color: #000000;
     text-align: center;
 }
 
 .label {
-    color: #ffffff;
+    color: #000000;
     display: block;
     font-size: 0.875rem;
     font-weight: medium;
@@ -85,16 +85,17 @@ body {
 
 .botao {
     width: 100%;
-    background-color: hsl(var(--primary));
-    color: hsl(var(--primary-foreground));
-    border-radius: 0.5rem;
-    padding: 0.5rem;
-    text-align: center;
-    cursor: pointer;
+  background-color: hsl(var(--primary));
+  color: hsl(var(--primary-foreground));
+  border-radius: 10rem 30rem;
+  margin-top: 20px;
+  padding: 0.5rem;
+  text-align: center;
+  cursor: pointer;
 }
 
 .botao:hover {
-    background-color: rgba(var(--primary), 0.8);
+    background-color: #000000;
 }
 
 .botao-v {
