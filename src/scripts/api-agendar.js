@@ -1,63 +1,109 @@
-// Inicializa o Flatpickr quando o documento estiver pronto
+// Inicializa o Flatpickr e configura o comportamento do botão de agendamento quando o documento estiver pronto
 document.addEventListener('DOMContentLoaded', function () {
     const agendarButtons = document.querySelectorAll('.agendarBtn');
 
     agendarButtons.forEach(button => {
-        button.addEventListener('click', function () {
-            // Verifica se já existe um calendário aberto para este botão
-            if (this.classList.contains('calendario-aberto')) {
-                return;  // Se já estiver aberto, não faz nada
-            }
+        button.addEventListener('click', async function () {
+            // Verifica se o usuário está logado
+            const isUserLoggedIn = await verificarLogin();
 
-            // Adiciona a classe 'calendario-aberto' para marcar que o calendário foi aberto
-            this.classList.add('calendario-aberto');
-
-            // Cria um input temporário para o date picker
-            const dateInput = document.createElement('input');
-            dateInput.setAttribute('type', 'text');
-            dateInput.classList.add('date-picker');
-
-            // Cria um botão de confirmação
-            const confirmButton = document.createElement('button');
-            confirmButton.textContent = 'Confirmar';
-            confirmButton.classList.add('confirm-btn');
-
-            // Insere o input e o botão próximo ao botão clicado
-            this.parentElement.appendChild(dateInput);
-            this.parentElement.appendChild(confirmButton);
-
-            // Inicializa o Flatpickr para o novo input
-            flatpickr(dateInput, {
-                enableTime: true,
-                dateFormat: "Y-m-d H:i",  // Formato para envio (formato técnico)
-                altInput: true,  // Habilita input alternativo
-                altFormat: "d/m/Y H:i",  // Formato exibido para o usuário
-                minDate: "today"
-            });
-
-            // Evento de clique no botão de confirmação
-            confirmButton.addEventListener('click', async () => {
-                const selectedDate = dateInput.value;
-                if (selectedDate) {
-                    // Salva o agendamento após o usuário confirmar
-                    await saveAppointment(button, selectedDate);
-                } else {
-                    Swal.fire({
-                        title: 'Erro',
-                        text: 'Por favor, selecione uma data e hora.',
-                        icon: 'error',
-                        confirmButtonText: 'Ok'
-                    });
+            if (!isUserLoggedIn) {
+                // Se não estiver logado, exibe o alerta para login ou cadastro
+                Swal.fire({
+                    title: 'Você não está logado!',
+                    text: 'Para agendar um corte, você precisa estar logado.',
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonText: 'Login',
+                    cancelButtonText: 'Cadastrar',
+                    cancelButtonColor: '#d33',
+                    confirmButtonColor: '#3085d6'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        // Redireciona para a página de login
+                        window.location.href = 'logar.html';
+                    } else {
+                        // Redireciona para a página de cadastro
+                        window.location.href = 'cadastro.html';
+                    }
+                });
+            } else {
+                // Verifica se já existe um calendário aberto para este botão
+                if (this.classList.contains('calendario-aberto')) {
+                    return;  // Se já estiver aberto, não faz nada
                 }
 
-                // Remove o input, o botão e a classe 'calendario-aberto' após a confirmação
-                dateInput.remove();
-                confirmButton.remove();
-                this.classList.remove('calendario-aberto');
-            });
+                // Adiciona a classe 'calendario-aberto' para marcar que o calendário foi aberto
+                this.classList.add('calendario-aberto');
+
+                // Cria um input temporário para o date picker
+                const dateInput = document.createElement('input');
+                dateInput.setAttribute('type', 'text');
+                dateInput.classList.add('date-picker');
+
+                // Cria um botão de confirmação
+                const confirmButton = document.createElement('button');
+                confirmButton.textContent = 'Confirmar';
+                confirmButton.classList.add('confirm-btn');
+
+                // Insere o input e o botão próximo ao botão clicado
+                this.parentElement.appendChild(dateInput);
+                this.parentElement.appendChild(confirmButton);
+
+                // Inicializa o Flatpickr para o novo input
+                flatpickr(dateInput, {
+                    enableTime: true,
+                    dateFormat: "Y-m-d H:i",  // Formato para envio (formato técnico)
+                    altInput: true,  // Habilita input alternativo
+                    altFormat: "d/m/Y H:i",  // Formato exibido para o usuário
+                    minDate: "today"
+                });
+
+                // Evento de clique no botão de confirmação
+                confirmButton.addEventListener('click', async () => {
+                    const selectedDate = dateInput.value;
+                    if (selectedDate) {
+                        // Salva o agendamento após o usuário confirmar
+                        await saveAppointment(button, selectedDate);
+                    } else {
+                        Swal.fire({
+                            title: 'Erro',
+                            text: 'Por favor, selecione uma data e hora.',
+                            icon: 'error',
+                            confirmButtonText: 'Ok'
+                        });
+                    }
+
+                    // Remove o input, o botão e a classe 'calendario-aberto' após a confirmação
+                    dateInput.remove();
+                    confirmButton.remove();
+                    this.classList.remove('calendario-aberto');
+                });
+            }
         });
     });
 });
+
+// Função para verificar se o usuário está logado
+async function verificarLogin() {
+    try {
+        // Chama a API para verificar o status de login
+        const response = await fetch('http://localhost:8080/api/verificar-login', {
+            method: 'GET',
+            credentials: 'include', // Inclui cookies para a sessão
+        });
+
+        // Se o status for OK, retorna true, indicando que o usuário está logado
+        if (response.ok) {
+            return true;
+        } else {
+            return false;
+        }
+    } catch (error) {
+        console.error('Erro ao verificar login:', error);
+        return false; // Se houver algum erro, retorna false
+    }
+}
 
 // Função para salvar o agendamento com comunicação com a API e SweetAlert2
 async function saveAppointment(button, dateStr) {
