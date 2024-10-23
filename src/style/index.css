@@ -57,6 +57,20 @@ body {
     border-bottom: 3px solid #b197fc; /* Barra visível ao passar o cursor */
 }
 
+.nav-links li.login a {
+    color: white;
+    background-color: transparent; /* Fundo transparente inicialmente */
+    padding: 10px 20px; /* Padding para parecer um botão */
+    border: 2px solid #b197fc; /* Borda */
+    border-radius: 25px; /* Bordas arredondadas */
+    font-weight: bold;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Transição suave */
+}
+
+.nav-links li.login a:hover {
+    transition: color 0.3s ease, border-bottom 0.3s ease;
+    border-bottom: 3px solid #b197fc; /* Barra visível ao passar o cursor */
+}
 
 .hero {
     display: flex;
