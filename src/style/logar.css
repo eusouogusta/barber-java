@@ -5,7 +5,7 @@ body {
     height: 100vh;
     margin: 0;
     font-family: Arial, sans-serif;
-    color: #ffffff; /* Cor do texto */
+    color: #ffffff;
 }
 
 .back-pag {
@@ -13,14 +13,14 @@ body {
 }
 
 .login-container {
-    background-color: white; /* Fundo branco para a caixa de login */
+    background-color: white;
     position: relative;
-    padding: 30px;
-    left: 5%;
-    border: 3px solid black;
-    border-radius: 8px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-    width: 350px;
+    padding: 1.875rem;
+    left: 0.3125rem;
+    border: 0.1875rem solid black;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 1.25rem rgba(0, 0, 0, 0.5);
+    width: 21.875rem;
     text-align: center;
 }
 
@@ -33,101 +33,99 @@ h2, h4 {
 }
 
 .login-header h2 {
-    margin-bottom: 10px;
+    margin-bottom: 0.625rem;
 }
 
 .login-header p {
-    margin-bottom: 30px;
+    margin-bottom: 1.875rem;
     color: black;
 }
 
 .input-group {
-    margin-bottom: 20px;
+    margin-bottom: 1.25rem;
     text-align: left;
 }
 
 .input-group label {
     display: block;
-    margin-bottom: 5px;
+    margin-bottom: 0.3125rem;
 }
 
 .input-group input {
     width: 100%;
-    padding: 10px;
+    padding: 0.625rem;
     border-color: black;
-    border-radius: 5px;
+    border-radius: 0.3125rem;
     box-sizing: border-box;
 }
 
 button {
     width: 50%;
-    padding: 10px;
-    background-color: #13072e; /* Cor de fundo dos botões */
+    padding: 0.625rem;
+    background-color: #13072e;
     border: none;
-    border-radius: 10px;
-    color: white; /* Cor do texto nos botões */
-    font-size: 16px;
+    border-radius: 0.625rem;
+    color: white;
+    font-size: 1rem;
     cursor: pointer;
-    margin-top: 20px;
+    margin-top: 1.25rem;
 }
 
 button:hover {
     background-color: #13072e;
 }
 
-.B-entrar, .B-cadastro{
-    border-radius: 10px 35px;
+.B-entrar, .B-cadastro {
+    border-radius: 0.625rem 2.1875rem;
 }
 
 .img-logo {
-    height: 70vh;
+    height: 43.75vh;
 }
 
 .Logo-logar {
     position: relative;
-    right: 40px;
+    right: 2.5rem;
 }
 
 .linha-ou {
     display: flex;
     align-items: center;
     text-align: center;
-    margin: 20px 0;
+    margin: 1.25rem 0;
 }
 
 .linha-ou::before,
 .linha-ou::after {
     content: "";
     flex: 1;
-    border-bottom: 0.5px solid #000;
-    margin: 0 10px;
+    border-bottom: 0.03125rem solid #000;
+    margin: 0 0.625rem;
 }
 
 .linha-ou span {
     font-weight: bold;
-    padding: 0 10px;
+    padding: 0 0.625rem;
     color: #000;
-    font-size: 14px;
+    font-size: 0.875rem;
 }
 
-/* Estilos para "Esqueci a Senha" */
-/* Estilos para "Esqueci a Senha" */
 .forgot-password {
-    text-align: center; /* Centraliza o texto */
-    margin-top: 5px; /* Espaço acima do link */
-    font-size: 14px; /* Tamanho da fonte */
-    width: 100%; /* Para que ocupe a mesma largura do input */
+    text-align: center;
+    margin-top: 0.3125rem;
+    font-size: 0.875rem;
+    width: 100%;
 }
 
 .forgot-password a {
-    display: inline-block; /* Para que a largura funcione corretamente */
-    color: #13072e; /* Cor do texto do link */
-    text-decoration: none; /* Remove o sublinhado */
-    font-weight: bold; /* Deixa o texto em negrito */
-    transition: color 0.3s; /* Animação de transição para a cor */
-    margin: 0 auto; /* Centraliza o link */
+    display: inline-block;
+    color: #13072e;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+    margin: 0 auto;
 }
 
 .forgot-password a:hover {
-    color: #ff6347; /* Cor ao passar o mouse */
+    color: #ff6347;
 }
