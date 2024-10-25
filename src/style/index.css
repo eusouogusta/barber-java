@@ -9,6 +9,7 @@ body {
     background-color: #0b0024;
     color: white;
     line-height: 1.6;
+    overflow-x: hidden;
 }
 
 .container {
@@ -25,6 +26,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 .logo-section {
@@ -34,34 +36,40 @@ body {
 
 .logo img {
     margin-top: 0;
-    width: 170px;
+    width: 10.625rem; 
 }
 
 .nav-links {
     list-style: none;
     display: flex;
-    gap: 50px; 
+    gap: 3.125rem; 
+}
+
+.nav-links li {
+    flex: 1;
 }
 
 .nav-links li a {
     color: white;
     text-decoration: none;
-    font-size: 25px;
+    font-size: 1.5625rem; 
     font-weight: bold;
     transition: color 0.3s ease, border-bottom 0.3s ease; 
-    border-bottom: 3px solid transparent; 
+    border-bottom: 0.1875rem solid transparent; 
+    display: block;
+    text-align: center;
 }
 
 .nav-links li a:hover {
     color: #b197fc;
-    border-bottom: 3px solid #b197fc; 
+    border-bottom: 0.1875rem solid #b197fc; 
 }
 
 .nav-links li.login a {
     background-color: transparent; 
-    padding: 10px 20px; 
-    border: 2px solid #b197fc; 
-    border-radius: 25px; 
+    padding: 0.625rem 1.25rem; 
+    border: 0.125rem solid #b197fc; 
+    border-radius: 1.5625rem; 
     font-weight: bold;
     transition: background-color 0.3s ease, color 0.3s ease; 
 }
@@ -92,21 +100,21 @@ body {
 }
 
 .hero-text h1 {
-    font-size: 50px; 
+    font-size: 3.125rem; 
     margin-bottom: 0; 
     text-transform: uppercase;
     line-height: 1.2;
 }
 
 .hero-text p {
-    font-size: 25px; 
+    font-size: 1.5625rem; 
     margin-bottom: 1rem;
 }
 
 .hero-image img {
-    max-width: 450px; 
+    max-width: 28.125rem; 
     height: auto;
-    border-radius: 15px;
+    border-radius: 0.9375rem; 
 }
 
 .btn-schedule {
@@ -115,13 +123,52 @@ body {
     color: #0b0024;
     text-decoration: none;
     font-weight: bold;
-    font-size: 20px; 
-    border-radius: 30px;
+    font-size: 1.25rem; 
+    border-radius: 1.875rem;
     transition: background-color 0.3s ease;
+    display: inline-block;
+    margin-top: 1rem;
 }
 
 .btn-schedule:hover {
     background-color: #b197fc;
+}
+
+@media (max-width: 48rem) { /* 768px */
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 1.25rem; /* 20px */
+    }
+
+    .hero {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .hero-text {
+        max-width: 100%;
+    }
+
+    .hero-image {
+        display: none;
+    }
+
+    .btn-schedule {
+        width: 100%;
+        padding: 1rem;
+        font-size: 1.125rem; 
+    }
 }
 
 footer {
