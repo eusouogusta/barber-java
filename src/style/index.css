@@ -9,6 +9,7 @@ body {
     background-color: #0b0024;
     color: white;
     line-height: 1.6;
+    overflow-x: hidden;
 }
 
 .container {
@@ -18,13 +19,14 @@ body {
 
 .header {
     background: linear-gradient(to bottom, #1a0454, #0b0024);
-    padding: 0rem;
+    padding: 0;
 }
 
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 .logo-section {
@@ -33,55 +35,57 @@ body {
 }
 
 .logo img {
-    margin-top: 0px;
-    width: 170px;
+    margin-top: 0;
+    width: 10.625rem; 
 }
 
 .nav-links {
     list-style: none;
     display: flex;
-    gap: 50px; /* Diminuindo o espaçamento entre links */
+    gap: 3.125rem; 
+}
+
+.nav-links li {
+    flex: 1;
 }
 
 .nav-links li a {
     color: white;
     text-decoration: none;
-    font-size: 25px;
+    font-size: 1.5625rem; 
     font-weight: bold;
-    transition: color 0.3s ease, border-bottom 0.3s ease; /* Adicionando transição para o efeito da barra */
-    border-bottom: 3px solid transparent; /* Barra invisível inicialmente */
+    transition: color 0.3s ease, border-bottom 0.3s ease; 
+    border-bottom: 0.1875rem solid transparent; 
+    display: block;
+    text-align: center;
 }
 
 .nav-links li a:hover {
     color: #b197fc;
-    border-bottom: 3px solid #b197fc; /* Barra visível ao passar o cursor */
+    border-bottom: 0.1875rem solid #b197fc; 
 }
 
 .nav-links li.login a {
-    color: white;
-    background-color: transparent; /* Fundo transparente inicialmente */
-    padding: 10px 20px; /* Padding para parecer um botão */
-    border: 2px solid #b197fc; /* Borda */
-    border-radius: 25px; /* Bordas arredondadas */
+    background-color: transparent; 
+    padding: 0.625rem 1.25rem; 
+    border: 0.125rem solid #b197fc; 
+    border-radius: 1.5625rem; 
     font-weight: bold;
-    transition: background-color 0.3s ease, color 0.3s ease; /* Transição suave */
+    transition: background-color 0.3s ease, color 0.3s ease; 
 }
 
 .nav-links li.login a:hover {
-    transition: color 0.3s ease, border-bottom 0.3s ease;
-    border-bottom: 3px solid #b197fc; /* Barra visível ao passar o cursor */
+    background-color: #b197fc; 
+    color: white; 
 }
 
 .hero {
     display: flex;
-    align-items: flex-start; /* Alinha o conteúdo no topo */
+    align-items: flex-start; 
     justify-content: space-between;
-    align-items: center;
     padding: 1rem 0;
     background-color: #0b0024;
     color: white;
-    margin-top: 0rem;
-    
 }
 
 .hero-content {
@@ -91,48 +95,86 @@ body {
 }
 
 .hero-text {
-    margin-top: 0; /* Remove qualquer margem extra no topo */
+    margin-top: 0; 
     max-width: 70%;
 }
 
 .hero-text h1 {
-    font-size:50px; /* Aumentando o tamanho do título */
-    margin-bottom: 0rem;
+    font-size: 3.125rem; 
+    margin-bottom: 0; 
     text-transform: uppercase;
     line-height: 1.2;
 }
 
 .hero-text p {
-    font-size: 25px; /* Aumentando o tamanho do texto */
+    font-size: 1.5625rem; 
     margin-bottom: 1rem;
 }
 
 .hero-image img {
-    max-width: 450px; /* Aumentando a largura da imagem */
+    max-width: 28.125rem; 
     height: auto;
-    border-radius: 15px;
+    border-radius: 0.9375rem; 
 }
 
 .btn-schedule {
-    padding: 1rem 2.5rem; /* Aumentando o tamanho do botão */
+    padding: 1rem 2.5rem; 
     background-color: white;
     color: #0b0024;
     text-decoration: none;
     font-weight: bold;
-    font-size: 20px; /* Aumentando o texto do botão */
-    border-radius: 30px;
+    font-size: 1.25rem; 
+    border-radius: 1.875rem;
     transition: background-color 0.3s ease;
+    display: inline-block;
+    margin-top: 1rem;
 }
 
 .btn-schedule:hover {
     background-color: #b197fc;
 }
 
+@media (max-width: 48rem) { /* 768px */
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 1.25rem; /* 20px */
+    }
+
+    .hero {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .hero-text {
+        max-width: 100%;
+    }
+
+    .hero-image {
+        display: none;
+    }
+
+    .btn-schedule {
+        width: 100%;
+        padding: 1rem;
+        font-size: 1.125rem; 
+    }
+}
+
 footer {
     background-color: #0b0024;
     text-align: center;
-    padding: 0rem 0;
-    margin-top: 0rem;
+    padding: 1rem 0; 
 }
 
 footer p {

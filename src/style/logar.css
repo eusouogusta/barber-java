@@ -86,9 +86,13 @@ button:hover {
 
 .Logo-logar {
     position: relative;
+<<<<<<< HEAD
     display: flex; /* Flex para centralizar */
     justify-content: center; /* Centraliza horizontalmente */
     margin-bottom: 1px; /* Espaço menor entre a logo e o formulário */
+=======
+    right: 2.5rem;
+>>>>>>> ca89446d5eef10bae973f50debce529478e0213e
 }
 
 .linha-ou {
@@ -131,6 +135,7 @@ button:hover {
 
 .forgot-password a:hover {
     color: #ff6347;
+<<<<<<< HEAD
 }
 
 /* Estilo para dispositivos móveis */
@@ -163,4 +168,6 @@ button:hover {
     button {
         width: 70%;
     }
+=======
+>>>>>>> ca89446d5eef10bae973f50debce529478e0213e
 }

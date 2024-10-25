@@ -1,4 +1,3 @@
-
 :root {
   --background: 0 0% 100%;
   --foreground: 240 10% 3.9%;
@@ -32,9 +31,10 @@ body {
   margin: 0;
 }
 
-.corpo1{
+.corpo1 {
   background-color: #13072e;
 }
+
 .container {
   background-color: #13072e;
   display: flex;
@@ -63,7 +63,7 @@ body {
 }
 
 .icon-large i {
-  font-size: 70px; /* Ajuste o valor para o tamanho desejado */
+  font-size: 70px;
 }
 
 .subtitulo {
@@ -72,7 +72,7 @@ body {
 }
 
 .formulario {
-  background: radial-gradient(#13072e,#3f2182);
+  background: radial-gradient(#13072e, #3f2182);
   margin-top: 1.5rem;
   display: flex;
   flex-direction: column;
@@ -110,26 +110,26 @@ body {
   background-color: rgba(var(--primary), 0.8);
 } 
 
-.botao-v{
+.botao-v {
   position: absolute;
   top: 10dvh;
   left: 25dvh;
 }
 
 .button-login {
-position: absolute;
-top: 10dvh; 
-right: 25dvh; 
+  position: absolute;
+  top: 10dvh;
+  right: 25dvh;
 }
 
-.Corte{
+.Corte {
   opacity: 93%;
   position: absolute;
   bottom: 2rem;
   left: 2rem;
 }
 
-.Bigode{
+.Bigode {
   position: absolute;
   top: 5rem;
   right: 1rem;
