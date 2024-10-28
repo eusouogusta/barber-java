@@ -6,7 +6,7 @@
 }
 
 body {
-    background-color: #0b0024;
+    background: radial-gradient( #13072e, black);
     color: white;
     line-height: 1.6;
     overflow-x: hidden;
@@ -82,7 +82,6 @@ body {
     align-items: flex-start; 
     justify-content: space-between;
     padding: 1rem 0;
-    background-color: #0b0024;
     color: white;
 }
 
@@ -173,7 +172,7 @@ body {
 }
 
 footer {
-    background-color: #0b0024;
+    
     text-align: center;
     padding: 1rem 0; 
 }
