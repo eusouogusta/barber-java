@@ -12,15 +12,21 @@ body {
 .back-pag {
     background-color: #13072e;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     width: 100%;
     max-width: 1200px;
     padding: 0 2rem;
 }
 
+.centralizado {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .Logo-logar {
-    margin-left: 20%;
+    margin: 0 0 2rem 0;
 }
 
 .img-logo {
@@ -36,7 +42,6 @@ body {
     box-shadow: 0 0 1.25rem rgba(0, 0, 0, 0.5);
     width: 21.875rem;
     text-align: center;
-    margin-left: 0rem;
 }
 
 h2, h4 {
@@ -45,18 +50,6 @@ h2, h4 {
 
 .input-group {
     color: black;
-}
-
-.login-header h2 {
-    margin-bottom: 0.625rem;
-}
-
-.login-header p {
-    margin-bottom: 1.875rem;
-    color: black;
-}
-
-.input-group {
     margin-bottom: 1.25rem;
     text-align: left;
 }
@@ -69,7 +62,7 @@ h2, h4 {
 .input-group input {
     width: 100%;
     padding: 0.625rem;
-    border-color: black;
+    border: 1px solid black;
     border-radius: 0.3125rem;
     box-sizing: border-box;
 }
@@ -94,7 +87,7 @@ button:hover {
     border-radius: 0.625rem 2.1875rem;
 }
 
-/* Estilo para linha com 'OU' */
+/* Linha com 'OU' */
 .linha-ou {
     display: flex;
     align-items: center;
@@ -106,7 +99,7 @@ button:hover {
 .linha-ou::after {
     content: "";
     flex: 1;
-    border-bottom: 0.03125rem solid #000;
+    border-bottom: 1px solid #000;
     margin: 0 0.625rem;
 }
 
@@ -139,37 +132,30 @@ button:hover {
 
 /* Estilo para dispositivos móveis */
 @media (max-width: 768px) {
-    body {
-        flex-direction: column;
-        padding-top: 20px;
-    }
-
     .back-pag {
         flex-direction: column;
-        align-items: center;
+        padding: 1rem;
     }
 
     .Logo-logar {
-        order: -1;
-        display: flex;
-        justify-content: center;
-        margin: 0 auto 10px; /* Centraliza a logo e ajusta a margem inferior */
+        margin: 0;
     }
 
     .img-logo {
-        max-height: 140px;
+        height: 150px;
         width: auto;
         border-radius: 50%;
         object-fit: cover;
+        margin-bottom: 1rem;
     }
 
     .login-container {
-        width: 90%;
-        padding: 20px;
-        margin-top: 10px;
+        width: 100%;
+        max-width: 350px;
+        padding: 1rem;
     }
 
     button {
-        width: 70%;
+        width: 100%;
     }
 }
