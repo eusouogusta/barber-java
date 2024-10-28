@@ -134,3 +134,21 @@ body {
   top: 5rem;
   right: 1rem;
 }
+
+@media (max-width: 48rem) {
+  /* Ajusta o botão de voltar para o canto esquerdo */
+  .botao-v {
+    top: 1rem;
+    left: 0.5rem; /* Posiciona o botão mais para a esquerda no mobile */
+  }
+
+  /* Remove as imagens no mobile */
+  .Corte, .Bigode {
+    display: none;
+  }
+
+  .container, .formulario {
+    padding: 1rem;
+    width: 90%;
+  }
+}
