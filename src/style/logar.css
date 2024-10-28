@@ -11,18 +11,32 @@ body {
 
 .back-pag {
     background-color: #13072e;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    padding: 0 2rem;
+}
+
+.Logo-logar {
+    margin-left: 20%;
+}
+
+.img-logo {
+    height: 43.75vh;
 }
 
 .login-container {
     background-color: white;
     position: relative;
     padding: 1.875rem;
-    left: 0.3125rem;
     border: 0.1875rem solid black;
     border-radius: 0.5rem;
     box-shadow: 0 0 1.25rem rgba(0, 0, 0, 0.5);
     width: 21.875rem;
     text-align: center;
+    margin-left: 0rem;
 }
 
 h2, h4 {
@@ -80,14 +94,7 @@ button:hover {
     border-radius: 0.625rem 2.1875rem;
 }
 
-.img-logo {
-    height: 43.75vh;
-}
-
-.Logo-logar {
-    right: 2.5rem;
-}
-
+/* Estilo para linha com 'OU' */
 .linha-ou {
     display: flex;
     align-items: center;
@@ -128,7 +135,6 @@ button:hover {
 
 .forgot-password a:hover {
     color: #ff6347;
-<<<<<<< HEAD
 }
 
 /* Estilo para dispositivos móveis */
@@ -138,15 +144,20 @@ button:hover {
         padding-top: 20px;
     }
 
+    .back-pag {
+        flex-direction: column;
+        align-items: center;
+    }
+
     .Logo-logar {
-        order: -1; /* Coloca a logo no topo */
+        order: -1;
         display: flex;
-        justify-content: center; /* Centraliza horizontalmente */
-        margin-bottom: 10px; /* Ajustado para ficar mais próximo do formulário */
+        justify-content: center;
+        margin: 0 auto 10px; /* Centraliza a logo e ajusta a margem inferior */
     }
 
     .img-logo {
-        max-height: 140px; /* Aumenta um pouco o tamanho da logo em telas menores */
+        max-height: 140px;
         width: auto;
         border-radius: 50%;
         object-fit: cover;
@@ -155,12 +166,10 @@ button:hover {
     .login-container {
         width: 90%;
         padding: 20px;
-        margin-top: 10px; /* Adiciona um pequeno espaço no topo para afastar do topo da tela */
+        margin-top: 10px;
     }
 
     button {
         width: 70%;
     }
-=======
->>>>>>> ca89446d5eef10bae973f50debce529478e0213e
 }
