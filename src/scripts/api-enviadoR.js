@@ -15,8 +15,8 @@ async function solicitarRestauracao(email) {
 
         const data = await response.json();
         console.log('E-mail de restauração enviado:', data.message);
-        // Aqui você pode redirecionar o usuário para a página de confirmação
-        window.location.href = "email-restauracao.html"; // Redirecionar para a página de confirmação
+        // Redirecionar para a página de confirmação
+        window.location.href = "email-restauracao.html"; 
 
     } catch (error) {
         console.error('Erro:', error);
@@ -24,9 +24,14 @@ async function solicitarRestauracao(email) {
     }
 }
 
-// Exemplo de como chamar a função
+// Exemplo de como chamar a função (apenas se o HTML tiver um formulário)
 document.getElementById('formRestauracao').addEventListener('submit', function(event) {
     event.preventDefault();
     const email = document.getElementById('emailRestauracao').value;
     solicitarRestauracao(email);
+});
+
+// Redireciona para a página de login ao clicar no botão "Voltar"
+document.getElementById('backButton').addEventListener('click', function() {
+    window.location.href = "logar.html"; // Altere para a página de login ou qualquer outra que desejar
 });
