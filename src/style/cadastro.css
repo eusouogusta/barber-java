@@ -22,7 +22,7 @@
 }
 
 body {
-  background-color: #13072e;
+  background: radial-gradient( #13072e, black);
   color: hsl(var(--foreground));
   display: flex;
   justify-content: center;
@@ -31,12 +31,7 @@ body {
   margin: 0;
 }
 
-.corpo1 {
-  background-color: #13072e;
-}
-
 .container {
-  background-color: #13072e;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -46,11 +41,10 @@ body {
 }
 
 .formulario {
-  background-color: #13072e;
+  background: radial-gradient( #13072e, black);
   width: 100%;
   max-width: 28rem;
   padding: 1.5rem;
-  background-color: hsl(var(--card));
   border-radius: 0.5rem;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
@@ -72,7 +66,7 @@ body {
 }
 
 .formulario {
-  background: radial-gradient(#13072e, #3f2182);
+  background: radial-gradient(#13072e);
   margin-top: 1.5rem;
   display: flex;
   flex-direction: column;

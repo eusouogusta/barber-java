@@ -10,7 +10,7 @@
 }
 
 body, .corpo1 {
-    background-color: #13072e;
+    background: radial-gradient( #13072e, black);
     color: hsl(var(--foreground));
     display: flex;
     justify-content: center;

@@ -9,7 +9,7 @@ body {
 }
 
 .back-pag {
-    background-color: #13072e;
+    background: radial-gradient( #13072e, black);
     display: flex;
     justify-content: center;
     align-items: center;
