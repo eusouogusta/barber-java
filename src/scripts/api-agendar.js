@@ -108,10 +108,10 @@ async function verificarLogin() {
 // Função para salvar o agendamento com comunicação com a API e SweetAlert2
 async function saveAppointment(button, dateStr) {
     const service = button.closest('tr').querySelector('td:first-child').textContent.trim();
-    
+
     // Obtém o ID do usuário do atributo data-usuario-id do botão
     const usuarioId = button.getAttribute('data-usuario-id');
-    
+
     try {
         // Chama a função para enviar o agendamento ao backend (API)
         const response = await agendarServico(dateStr, service, usuarioId);
@@ -162,7 +162,7 @@ async function agendarServico(dataStr, servico, usuarioId) {
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify({ 
+            body: JSON.stringify({
                 usuario: { id: usuarioId }, // Enviando o usuário como objeto
                 servico: servico,
                 data: data // Usando o formato ISO

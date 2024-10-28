@@ -1,12 +1,12 @@
 // api-restauracao.js
 
 // Redireciona para a página de login ao clicar no botão "Voltar"
-document.getElementById('backButton').addEventListener('click', function() {
+document.getElementById('backButton').addEventListener('click', function () {
     window.location.href = "logar.html"; // Altere para a página de login ou qualquer outra que desejar
 });
 
 // Envia o e-mail para restauração de senha
-document.getElementById('resetForm').addEventListener('submit', function(event) {
+document.getElementById('resetForm').addEventListener('submit', function (event) {
     event.preventDefault(); // Impede o envio padrão do formulário
     const email = document.getElementById('email').value;
 

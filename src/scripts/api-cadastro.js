@@ -68,6 +68,6 @@ document.querySelector('.formulario').addEventListener('submit', function (event
 });
 
 // Evento para o botão "Voltar"
-document.getElementById("backButton").addEventListener("click", function() {
+document.getElementById("backButton").addEventListener("click", function () {
     window.history.back(); // Retorna à página anterior
 });
