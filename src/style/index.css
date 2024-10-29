@@ -101,6 +101,11 @@ body {
     margin-top: 0; 
     max-width: 70%;
 }
+@media (min-width: 768px) {
+    .hero-text {
+        margin-left: 10rem; /* Adiciona a margem apenas para desktop */
+    }
+}
 
 .hero-text h1 {
     font-size: 3.125rem; 
