@@ -21,14 +21,14 @@ async function register(name, email, password, confirmPassword) {
 
         const data = await response.json();
         
-        // Exibir mensagem de sucesso e redirecionar para index.html
+        // Exibir mensagem de sucesso e redirecionar para logar.html
         Swal.fire({
             icon: 'success',
             title: 'Cadastro realizado com sucesso!',
             text: `Bem-vindo, ${name}! Você pode fazer login agora.`,
             confirmButtonText: 'OK'
         }).then(() => {
-            window.location.href = 'index.html'; // Redireciona para index.html
+            window.location.href = 'logar.html'; // Redireciona para logar.html
         });
 
     } catch (error) {
