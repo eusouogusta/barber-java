@@ -24,8 +24,8 @@ async function login(email, password) {
             text: 'Login realizado com sucesso.',
             confirmButtonText: 'OK'
         }).then(() => {
-            // Redireciona o usuário para a página de agendamento após o login
-            window.location.href = "agendar.html";
+            // Redireciona o usuário para a página index.html após o login
+            window.location.href = "index.html";
         });
 
     } catch (error) {
