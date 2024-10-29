@@ -44,7 +44,7 @@ public class UsuarioService {
             throw new UsuarioEmaileSenhaNulaouVaziaException("você inseriu uma senha incorreta");
         }
         var u = repository.save(usuario);
-        emailService.enviarEmail(usuario.getEmail(), "Cadastro Realizado", "Olá, " + usuario.getNome() + ", você foi cadastrado com sucesso em nosso sistema.");
+      //  emailService.enviarEmail(usuario.getEmail(), "Cadastro Realizado", "Olá, " + usuario.getNome() + ", você foi cadastrado com sucesso em nosso sistema.");
 
         return u;
 

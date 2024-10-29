@@ -18,15 +18,19 @@ public class LoginController {
     UsuarioRepository repository;
 
     @PostMapping("/login")
-    public ResponseEntity<Object> realizarAutenticacao(@RequestBody Login login){
+    public ResponseEntity<Object> realizarAutenticacao(@RequestBody Login login) {
         Usuario usuario = repository.findByEmail(login.getEmail());
-       if(usuario == null){
-           return ResponseEntity.status(HttpStatus.NOT_FOUND).body(Collections.singletonMap("message","esse email não esta cadastrado"));
-       }
-       if(!login.getSenha().equals(usuario.getSenha())){
-           return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(Collections.singletonMap("message","senha inválida"));
-       }
 
-       return  ResponseEntity.status(HttpStatus.OK).body(Collections.singletonMap("message","login efetivado"));
+        if (usuario == null) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(Collections.singletonMap("message", "esse email não esta cadastrado"));
+        }
+
+        if (!login.getSenha().equals(usuario.getSenha())) {
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(Collections.singletonMap("message", "senha inválida"));
+        }
+
+        // Retorna uma resposta com a mensagem de sucesso e o ID do usuário
+        return ResponseEntity.status(HttpStatus.OK).body(Collections.singletonMap("id", usuario.getId()));
     }
+
 }

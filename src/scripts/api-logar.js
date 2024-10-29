@@ -6,7 +6,7 @@ async function login(email, password) {
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify({ email: email, senha: password }), // Ajuste conforme esperado pelo backend
+            body: JSON.stringify({ email: email, senha: password }), // Certifique-se de que os campos estão corretos
         });
 
         if (!response.ok) {
@@ -16,6 +16,10 @@ async function login(email, password) {
 
         const data = await response.json();
         console.log('Login bem-sucedido:', data);
+
+        // Armazenar o ID do usuário no sessionStorage
+        const userId = data.id; // O ID vem da resposta do backend
+        sessionStorage.setItem('userId', userId); // Armazena o ID
 
         // Exibe mensagem de sucesso usando SweetAlert2
         Swal.fire({
@@ -44,7 +48,8 @@ async function login(email, password) {
 // Chama a função quando o formulário de login for enviado
 document.getElementById('loginForm').addEventListener('submit', function (event) {
     event.preventDefault(); // Previne o envio padrão do formulário
-    const email = document.getElementById('username').value; // Alterado para 'email' para melhor clareza
-    const password = document.getElementById('password').value;
-    login(email, password);
+    console.log("Tentando fazer login..."); // Log para depuração
+    const email = document.getElementById('username').value; // Use o ID correto
+    const password = document.getElementById('password').value; // Use o ID correto
+    login(email, password); // Chama a função de login
 });
