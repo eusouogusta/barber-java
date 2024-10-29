@@ -10,7 +10,7 @@
 }
 
 body, .corpo1 {
-    background: radial-gradient( #13072e, black);
+    background: radial-gradient(#13072e, black);
     color: hsl(var(--foreground));
     display: flex;
     justify-content: center;
@@ -18,6 +18,8 @@ body, .corpo1 {
     min-height: 100vh;
     margin: 0;
     overflow: hidden; /* Remove a rolagem */
+    position: relative; /* Para que o footer se posicione em relação ao body */
+    flex-direction: column; /* Para que o conteúdo ocupe toda a altura da página */
 }
 
 .container {
@@ -123,4 +125,17 @@ body, .corpo1 {
     .Corte, .Bigode {
         display: none;
     }
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 1.25rem;
+    color: hsl(var(--primary-foreground)); /* Cor do texto do footer */
+    background-color: transparent; /* Fundo transparente */
+    position: absolute; /* Para garantir que o footer fique fixo na parte inferior */
+    bottom: 0; /* Alinhando o footer à parte inferior */
+    left: 0; /* Alinhando à esquerda */
+    right: 0; /* Alinhando à direita */
+    font-family: Arial, sans-serif; /* Fonte consistente */
 }
