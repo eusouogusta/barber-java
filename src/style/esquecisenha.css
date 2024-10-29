@@ -126,6 +126,21 @@ body, .corpo1 {
         display: none;
     }
 }
+.imagem-mobile {
+    display: none; /* Oculta a imagem por padrão */
+}
+
+/* Media query para dispositivos móveis */
+@media (max-width: 768px) {
+    .imagem-mobile {
+        display: block; /* Exibe a imagem em telas menores que 768px */
+        width: 200px; /* Ajuste a largura conforme necessário */
+        height: auto; /* Mantém a proporção da imagem */
+        position: relative; /* Mantém o fluxo do contêiner */
+        bottom: 0; /* Alinha a imagem na parte inferior do contêiner */
+    }
+}
+
 
 /* Footer */
 footer {
