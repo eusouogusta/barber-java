@@ -146,3 +146,14 @@ body {
     width: 90%;
   }
 }
+
+footer {
+  text-align: center;
+  padding: 1.25rem;
+  color: white;
+  background-color: transparent; 
+  position: absolute; 
+  bottom: 0; 
+  left: 0; 
+  right: 0; 
+}
