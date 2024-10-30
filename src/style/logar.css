@@ -156,9 +156,9 @@ footer {
     text-align: center;
     padding: 1.25rem;
     color: white;
-    background-color: transparent; /* Fundo transparente */
-    position: absolute; /* Para garantir que o footer fique fixo na parte inferior */
-    bottom: 0; /* Alinhando o footer à parte inferior */
-    left: 0; /* Alinhando à esquerda */
-    right: 0; /* Alinhando à direita */
+    background-color: transparent; 
+    position: absolute; 
+    bottom: 0; 
+    left: 0; 
+    right: 0; 
 }
