@@ -17,9 +17,9 @@ body, .corpo1 {
     align-items: center;
     min-height: 100vh;
     margin: 0;
-    overflow: hidden; /* Remove a rolagem */
-    position: relative; /* Para que o footer se posicione em relação ao body */
-    flex-direction: column; /* Para que o conteúdo ocupe toda a altura da página */
+    overflow: hidden;
+    position: relative;
+    flex-direction: column;
 }
 
 .container {
@@ -92,18 +92,36 @@ body, .corpo1 {
     right: 5vh;
 }
 
-/* Media query para celulares */
+/* Imagem móvel (logo) */
+.imagem-mobile {
+    display: none; /* Oculta a imagem por padrão */
+}
+
+/* Media query para dispositivos móveis */
 @media (max-width: 768px) {
-    html, body {
-        height: 100vh;
-        overflow: hidden; /* Impede a rolagem em dispositivos móveis */
+    /* Centralização do formulário e logo */
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        height: auto;
+        padding: 1rem;
     }
 
-    .container {
-        height: 100vh; /* Mantém a altura fixa da tela */
-        display: flex;
-        justify-content: center;
-        align-items: center;
+    .formulario {
+        margin-top: 1rem;
+        width: 90%;
+        padding: 1rem;
+        text-align: center;
+    }
+
+    /* Exibir a logo em dispositivos móveis */
+    .imagem-mobile {
+        display: block;
+        margin-top: 5vh; /* Ajuste para aproximar da margem superior */
+        width: 200px;
+        height: auto;
     }
 
     .botao-v {
@@ -112,45 +130,21 @@ body, .corpo1 {
         left: 1rem;
     }
 
-    .container, .formulario {
-        width: 90%;
-        padding: 1rem;
-    }
-
-    .titulo {
-        font-size: 1.25rem;
-    }
-
-    /* Ocultar imagens em telas de celular */
+    /* Ocultar imagens de desktop em telas de celular */
     .Corte, .Bigode {
         display: none;
     }
 }
-.imagem-mobile {
-    display: none; /* Oculta a imagem por padrão */
-}
-
-/* Media query para dispositivos móveis */
-@media (max-width: 768px) {
-    .imagem-mobile {
-        display: block; /* Exibe a imagem em telas menores que 768px */
-        width: 200px; /* Ajuste a largura conforme necessário */
-        height: auto; /* Mantém a proporção da imagem */
-        position: relative; /* Mantém o fluxo do contêiner */
-        bottom: 0; /* Alinha a imagem na parte inferior do contêiner */
-    }
-}
-
 
 /* Footer */
 footer {
     text-align: center;
     padding: 1.25rem;
-    color: hsl(var(--primary-foreground)); /* Cor do texto do footer */
-    background-color: transparent; /* Fundo transparente */
-    position: absolute; /* Para garantir que o footer fique fixo na parte inferior */
-    bottom: 0; /* Alinhando o footer à parte inferior */
-    left: 0; /* Alinhando à esquerda */
-    right: 0; /* Alinhando à direita */
-    font-family: Arial, sans-serif; /* Fonte consistente */
+    color: hsl(var(--primary-foreground));
+    background-color: transparent;
+    position: fixed; /* Alterado de absolute para fixed */
+    bottom: 0;
+    left: 0;
+    right: 0;
+    font-family: Arial, sans-serif;
 }
