@@ -3,14 +3,26 @@
     --foreground: 240 10% 3.9%;
     --card: 0 0% 100%;
     --card-foreground: 240 10% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
     --primary: 240 5.9% 10%;
     --primary-foreground: 0 0% 98%;
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 240 5.9% 10%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
     --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 240 5.9% 10%;
     --radius: 0.5rem;
 }
 
-body, .corpo1 {
-    background-color: #13072e;
+body {
+    background: radial-gradient(#13072e, black);
     color: hsl(var(--foreground));
     display: flex;
     justify-content: center;
@@ -26,25 +38,33 @@ body, .corpo1 {
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    padding: 1rem;
     color: hsl(var(--foreground));
 }
 
 .formulario {
+    background: radial-gradient(#13072e, black);
     width: 100%;
     max-width: 28rem;
     padding: 1.5rem;
-    background-color: hsl(var(--card));
-    border-radius: var(--radius);
-    box-shadow: 0 0.25rem 0.375rem rgba(0, 0, 0, 0.1);
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
 }
 
-.titulo, .subtitulo {
+.titulo {
+    color: #ffffff;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+.subtitulo {
     color: #ffffff;
     text-align: center;
 }
 
 .label {
+    color: #ffffff;
     display: block;
     font-size: 0.875rem;
     font-weight: medium;
@@ -52,6 +72,7 @@ body, .corpo1 {
 
 .input {
     margin-top: 0.25rem;
+    display: block;
     width: 100%;
     border: 1px solid hsl(var(--border));
     border-radius: 0.375rem;
@@ -62,9 +83,10 @@ body, .corpo1 {
     width: 100%;
     background-color: hsl(var(--primary));
     color: hsl(var(--primary-foreground));
-    border-radius: var(--radius);
-    margin-top: 1.25rem;
+    border-radius: 10rem 30rem;
+    margin-top: 20px;
     padding: 0.5rem;
+    text-align: center;
     cursor: pointer;
 }
 
@@ -74,59 +96,64 @@ body, .corpo1 {
 
 .botao-v {
     position: absolute;
-    top: 5rem;
-    left: 15rem;
+    top: 10dvh;
+    left: 25dvh;
+}
+
+.button-login {
+    position: absolute;
+    top: 10dvh;
+    right: 25dvh;
 }
 
 .Corte {
+    opacity: 93%;
     position: absolute;
-    bottom: 5rem;
-    left: 3.5rem;
+    bottom: 2rem;
+    left: 2rem;
 }
 
 .Bigode {
     position: absolute;
-    top: 16.5rem;
-    right: 3rem;
+    top: 5rem;
+    right: 1rem;
 }
 
+/* Imagem móvel (logo) */
+.imagem-mobile {
+    display: none; /* Oculta a imagem por padrão */
+}
+
+/* Responsividade para dispositivos móveis */
 @media (max-width: 48rem) {
-    html, body {
-        height: 100vh;
-        overflow: hidden;
+    .imagem-mobile {
+        display: block;
+        margin-top: 5vh;
+        width: 200px;
+        height: auto;
+    }
+    
+    .botao-v {
+        top: 1rem;
+        left: 0.5rem; /* Posiciona o botão mais para a esquerda no mobile */
+    }
+
+    .Corte, .Bigode {
+        display: none; /* Remove as imagens no mobile */
     }
 
     .container {
-        height: 100vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        padding: 1rem;
+        justify-content: flex-start;
     }
 
-    .botao-v {
-        position: fixed !important;
-        top: 1rem !important;
-        left: 1rem !important;
-    }
-
-    .container, .formulario {
+    .formulario {
+        margin-top: 1rem;
         width: 90%;
         padding: 1rem;
     }
-
-    .titulo {
-        font-size: 1.25rem;
-    }
-
-    /* Oculta as imagens no mobile */
-    .Corte, .Bigode {
-        display: none;
-        visibility: hidden;
-        width: 0;
-        height: 0;
-        overflow: hidden;
-    }
 }
+
 footer {
     text-align: center;
     padding: 1.25rem;
@@ -135,5 +162,5 @@ footer {
     position: absolute; 
     bottom: 0; 
     left: 0; 
-    right: 0; 
+    right: 0; 
 }
