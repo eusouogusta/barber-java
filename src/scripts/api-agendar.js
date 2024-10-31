@@ -1,4 +1,4 @@
-// Inicializa o Flatpickr e configura o comportamento do botão de agendamento quando o documento estiver pronto
+/*// Inicializa o Flatpickr e configura o comportamento do botão de agendamento quando o documento estiver pronto
 document.addEventListener('DOMContentLoaded', function () {
     const agendarButtons = document.querySelectorAll('.agendarBtn');
 
@@ -173,5 +173,122 @@ async function agendarServico(dataStr, servico, usuarioId) {
     } catch (error) {
         console.error('Erro na função agendarServico:', error);
         throw error;  // Repassa o erro para ser tratado no saveAppointment
+    }
+}
+    */
+
+
+// Inicializa o Flatpickr para um elemento que não foi definido no HTML (será adicionado dinamicamente)
+const inputDataHora = document.createElement('input');
+inputDataHora.type = 'text';
+inputDataHora.id = 'dataHora';
+inputDataHora.style.display = 'none'; // Inicialmente escondido
+document.body.appendChild(inputDataHora);
+
+let selectedDateTime = null; // Variável para armazenar data/hora selecionada
+let selectedServico; // Variável global para armazenar o serviço selecionado
+
+flatpickr("#dataHora", {
+    enableTime: true,
+    dateFormat: "Y-m-d H:i",
+    onChange: function(selectedDates, dateStr) {
+        selectedDateTime = dateStr; // Armazena a data/hora selecionada
+    }
+});
+
+// Adiciona o evento de clique nos botões "Agendar"
+document.querySelectorAll('.agendarBtn').forEach(button => {
+    button.addEventListener('click', function() {
+        selectedServico = this.closest('tr').children[0].textContent; // Obtém o serviço
+        const dataHoraInput = document.getElementById('dataHora');
+        
+        // Limpa o input e mostra
+        dataHoraInput.value = ''; // Limpa o input
+        dataHoraInput.style.display = 'block'; // Exibe o input de data/hora
+        dataHoraInput.focus(); // Foca no input para facilitar a seleção
+
+        // Cria um botão de confirmação
+        const confirmButton = document.createElement('button');
+        confirmButton.textContent = 'Confirmar';
+        confirmButton.classList.add('confirm-btn');
+
+        // Insere o botão próximo ao input
+        this.parentElement.appendChild(confirmButton);
+
+        // Evento de clique no botão de confirmação
+        confirmButton.addEventListener('click', async () => {
+            if (selectedDateTime) {
+                // Salva o agendamento após o usuário confirmar
+                await saveAppointment(selectedServico, selectedDateTime);
+            } else {
+                Swal.fire({
+                    title: 'Erro',
+                    text: 'Por favor, selecione uma data e hora.',
+                    icon: 'error',
+                    confirmButtonText: 'Ok'
+                });
+            }
+
+            // Remove o botão de confirmação após a confirmação
+            confirmButton.remove();
+            dataHoraInput.style.display = 'none'; // Esconde o input após a confirmação
+        });
+    });
+});
+
+async function saveAppointment(servico, dataHora) {
+    const usuarioId = sessionStorage.getItem('userId');
+
+    if (!usuarioId) {
+        Swal.fire({
+            title: 'Erro',
+            text: 'ID do usuário não encontrado. Faça login novamente.',
+            icon: 'error',
+            confirmButtonText: 'Ok'
+        });
+        return;
+    }
+
+    // Converte a data para o formato ISO
+    const dataISO = new Date(dataHora).toISOString();
+
+    try {
+        const response = await fetch('http://localhost:8080/agendar', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                servico: servico,
+                data: dataISO,
+                id_usuario: usuarioId
+            }),
+        });
+
+        if (response.ok) {
+            const data = await response.json();
+            Swal.fire({
+                title: 'Agendamento Confirmado!',
+                text: `Agendamento para "${servico}" confirmado para o dia e hora: ${dataHora}`,
+                icon: 'success',
+                confirmButtonText: '<i class="fas fa-check"></i> Confirmado',
+            });
+        } else {
+            const errorData = await response.json();
+            Swal.fire({
+                title: 'Erro',
+                text: errorData.message || 'Ocorreu um erro ao tentar confirmar o agendamento.',
+                icon: 'error',
+                confirmButtonText: 'Ok'
+            });
+        }
+    } catch (error) {
+        Swal.fire({
+            title: 'Erro',
+            text: 'Não foi possível se conectar ao servidor. Verifique sua conexão com a internet ou tente mais tarde.',
+            icon: 'error',
+            confirmButtonText: 'Ok'
+        });
+        console.error('Erro ao tentar se comunicar com a API:', error);
     }
 }
