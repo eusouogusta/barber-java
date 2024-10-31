@@ -17,7 +17,7 @@ public class LoginController {
     @Autowired
     UsuarioRepository repository;
 
-    @PostMapping("/login")
+    @PostMapping("/logar")
     public ResponseEntity<Object> realizarAutenticacao(@RequestBody Login login) {
         Usuario usuario = repository.findByEmail(login.getEmail());
 

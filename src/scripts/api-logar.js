@@ -1,4 +1,4 @@
-// Função para realizar login
+/*/ Função para realizar login
 async function login(email, password) {
     try {
         const response = await fetch('http://localhost:8080/login', {
@@ -52,4 +52,54 @@ document.getElementById('loginForm').addEventListener('submit', function (event)
     const email = document.getElementById('username').value; // Use o ID correto
     const password = document.getElementById('password').value; // Use o ID correto
     login(email, password); // Chama a função de login
+}); */
+
+async function login(email, password) {
+    try {
+        const response = await fetch('http://localhost:8080/logar', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ email, senha: password }), // Campos corretos
+        });
+
+        if (!response.ok) {
+            const errorData = await response.json();
+            throw new Error(errorData.message || 'Erro ao realizar login');
+        }
+
+        const data = await response.json();
+        sessionStorage.setItem('userId', data.id); // Armazena o ID
+
+        // Mensagem de sucesso
+        Swal.fire({
+            icon: 'success',
+            title: 'Bem-vindo!',
+            text: 'Login realizado com sucesso.',
+            confirmButtonText: 'OK'
+        }).then(() => {
+            window.location.href = "index.html"; // Redireciona
+        });
+
+    } catch (error) {
+        console.error('Erro:', error);
+
+        // Mensagem de erro
+        Swal.fire({
+            icon: 'error',
+            title: 'Erro',
+            text: error.message || 'Usuário ou senha incorretos.',
+            confirmButtonText: 'OK'
+        });
+    }
+}
+
+// Chama a função quando o formulário de login for enviado
+document.getElementById('loginForm').addEventListener('submit', function (event) {
+    event.preventDefault(); // Previne o envio padrão do formulário
+    const email = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
+    login(email, password);
 });
+
