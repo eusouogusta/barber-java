@@ -63,7 +63,7 @@ body, .corpo1 {
     width: 100%;
     background-color: hsl(var(--primary));
     color: hsl(var(--primary-foreground));
-    border-radius: 0.5rem;
+    border-radius: 0.625rem 2.1875rem;
     margin-top: 20px;
     padding: 0.5rem;
     cursor: pointer;
@@ -77,6 +77,9 @@ body, .corpo1 {
     position: absolute;
     top: 10vh;
     left: 25vh;
+    display: flex;
+    justify-content: start; /* Alinha o botão à esquerda */
+    margin: 20px 0;
 }
 
 /* Posições das imagens no desktop */
@@ -96,6 +99,13 @@ body, .corpo1 {
 .imagem-mobile {
     display: none; /* Oculta a imagem por padrão */
 }
+
+  #backButton {
+    padding: 10px 15px;
+    border-radius: 5px;
+    border-radius: 0.625rem 2.1875rem;
+  }
+
 
 /* Media query para dispositivos móveis */
 @media (max-width: 768px) {

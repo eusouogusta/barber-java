@@ -71,7 +71,7 @@ body {
     background-color: transparent; 
     padding: 0.625rem 1.25rem; 
     border: 0.125rem solid #b197fc; 
-    border-radius: 1.5625rem; 
+    border-radius: 0.625rem 2.1875rem;
     font-weight: bold;
     transition: background-color 0.3s ease, color 0.3s ease; 
 }
@@ -137,6 +137,7 @@ body {
     display: inline-block;
     margin-top: 1rem;
 }
+
 
 .btn-schedule:hover {
     background-color: #b197fc;
