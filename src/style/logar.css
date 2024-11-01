@@ -139,6 +139,7 @@ button:hover {
         .centralizado {
             flex-direction: column;
             margin-top: -1.8rem;
+            margin-bottom: 0%;
         }
     
         .img-logo {
@@ -152,7 +153,7 @@ button:hover {
             width: 100%;
             max-width: 300px; /* Reduz a largura máxima do formulário */
             padding: 0.75rem; /* Reduz o padding */
-            margin-bottom: 0%
+            margin-bottom: 0%;
         }
     
         h2, h4 {
