@@ -5,6 +5,8 @@ body {
     margin: 0;
     font-family: Arial, sans-serif;
     color: #ffffff;
+    overflow: hidden; /* Bloqueia a rolagem da página */
+    
 }
 
 
@@ -134,10 +136,6 @@ button:hover {
 @media (max-width: 768px) {
     @media (max-width: 768px) {
 
-        body {
-            overflow: hidden; /* Bloqueia a rolagem da página */
-          }
-          
         .centralizado {
             flex-direction: column;
         }
@@ -145,7 +143,7 @@ button:hover {
         .img-logo {
             height: 100px; /* Reduz o tamanho do logo */
             width: auto;
-            margin-bottom: 1rem;
+            margin-bottom: 0rem;
         }
     
         .login-container {
