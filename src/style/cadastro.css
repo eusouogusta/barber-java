@@ -158,8 +158,8 @@ footer {
     display: block;
     width: 10px;
     height: auto;
-    margin-bottom: 3rem;
-    margin-top: -3rem;
+    margin-bottom: 5rem;
+    margin-top: -1rem;
     padding: 2rem;
   }
 
@@ -197,6 +197,6 @@ footer {
 
   footer {
     position: relative;
-    margin-bottom: 2rem;
+    margin-bottom: 1.50rem;
   }
 }
