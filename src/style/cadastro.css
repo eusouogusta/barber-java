@@ -158,7 +158,7 @@ footer {
     display: block;
     width: 10px;
     height: auto;
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
     margin-top: -3rem;
     padding: 2rem;
   }
@@ -197,6 +197,6 @@ footer {
 
   footer {
     position: relative;
-    margin-bottom: -1rem;
+    margin-bottom: 1rem;
   }
 }
