@@ -132,34 +132,48 @@ button:hover {
 
 /* Estilo para dispositivos móveis */
 @media (max-width: 768px) {
-    .centralizado {
-        flex-direction: column;
-    }
-
-    .img-logo {
-        height: 150px;
-        width: auto;
-        margin-bottom: 1rem;
-    }
-
-    .login-container {
-        width: 100%;
-        max-width: 350px;
-        padding: 1rem;
-    }
-
-    button {
-        width: 100%;
+    @media (max-width: 768px) {
+        .centralizado {
+            flex-direction: column;
+        }
+    
+        .img-logo {
+            height: 100px; /* Reduz o tamanho do logo */
+            width: auto;
+            margin-bottom: 1rem;
+        }
+    
+        .login-container {
+            width: 100%;
+            max-width: 300px; /* Reduz a largura máxima do formulário */
+            padding: 0.75rem; /* Reduz o padding */
+        }
+    
+        h2, h4 {
+            font-size: 0.1rem; /* Reduz o tamanho do texto */
+        }
+    
+        .input-group label, 
+        .input-group input, 
+        button {
+            font-size: 0.775rem; /* Reduz o tamanho das fontes dos inputs e botões */
+            padding: 0.3rem; /* Reduz o padding dos inputs */
+        }
+    
+        button {
+            width: 100%;
+        }
+    
+        footer {
+            padding: 0.75rem; /* Reduz o padding do footer */
+        }
     }
 }
-
-/* Footer */
 footer {
     text-align: center;
     padding: 1.25rem;
-    color: white;
-    background-color: transparent;
-    position: relative; /* Remove o position: fixed */
-    bottom: 0;
+    color: #ffffff !important;
+    background-color: transparent !important; /* Cor de fundo sólida */
     width: 100%;
+    z-index: 1; /* Garante que o footer fique sobre outros elementos */
 }
