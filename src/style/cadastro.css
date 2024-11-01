@@ -170,6 +170,10 @@ footer {
     margin-top: -2rem;
   }
 
+  .formulario{
+    margin-bottom: -2rem;
+  }
+
   .titulo {
     font-size: 1.1rem;
   }
@@ -193,6 +197,6 @@ footer {
 
   footer {
     position: relative;
-    margin-bottom: 9%;
+    margin-bottom: 0rem;
   }
 }
