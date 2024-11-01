@@ -172,8 +172,8 @@ button:hover {
         }
     
         footer {
-            margin-top: -1.8rem;
-            padding: 0.3rem; /* Reduz o padding do footer */
+            margin: 0%;
+            padding: 0rem; /* Reduz o padding do footer */
         }
     }
 }
