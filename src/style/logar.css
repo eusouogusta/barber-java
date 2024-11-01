@@ -159,9 +159,7 @@ button:hover {
             font-size: 0.1rem; /* Reduz o tamanho do texto */
         }
     
-        .input-group label, 
-        .input-group input, 
-        button {
+        .input-group label,.input-group input,button {
             font-size: 0.775rem; /* Reduz o tamanho das fontes dos inputs e botões */
             padding: 0.3rem; /* Reduz o padding dos inputs */
         }
