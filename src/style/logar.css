@@ -76,14 +76,37 @@ button {
 .linha-ou {
     display: flex;
     align-items: center;
+    justify-content: center; /* Centraliza o texto "OU" */
     margin: 1.25rem 0;
 }
 
+.linha-ou::before,
+.linha-ou::after {
+    content: "";
+    flex: 1;
+    border-bottom: 1px solid #000;
+    margin: 0 0.625rem;
+}
+
+.linha-ou span {
+    font-weight: bold;
+    padding: 0 0.625rem;
+    color: #000;
+    font-size: 0.875rem;
+}
+
 .forgot-password {
+    color: #13072e !important;
     text-align: center;
     margin-top: 0.3125rem;
     font-size: 0.875rem;
     width: 100%;
+    display: inline-block;
+    color: #13072e !important; /* Garante a cor correta */
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+    margin: 0 auto;
 }
 
 /* Responsividade para dispositivos móveis */
