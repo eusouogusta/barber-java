@@ -145,7 +145,7 @@ button:hover {
             margin-top: -15rem;
             height: 10rem;
             width: auto;
-            margin-bottom: 0rem;
+            margin-bottom: -2rem;
         }
     
         .login-container {
