@@ -141,6 +141,7 @@ button:hover {
         }
     
         .img-logo {
+            margin-top: 0rem;
             height: 100px; /* Reduz o tamanho do logo */
             width: auto;
             margin-bottom: 0rem;
