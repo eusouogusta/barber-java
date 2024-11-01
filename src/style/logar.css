@@ -142,7 +142,7 @@ button:hover {
         }
     
         .img-logo {
-            margin-top: -3rem;
+            margin-top: -1rem;
             height: 10rem;
             width: auto;
             margin-bottom: -1rem;
@@ -152,7 +152,7 @@ button:hover {
             width: 100%;
             max-width: 300px; /* Reduz a largura máxima do formulário */
             padding: 0.75rem; /* Reduz o padding */
-            margin-bottom: 0%;
+            margin-bottom: -3%;
         }
     
         h2, h4 {
