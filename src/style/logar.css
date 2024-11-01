@@ -145,7 +145,7 @@ button:hover {
             margin-top: 8rem;
             height: 10rem;
             width: auto;
-            margin-bottom: 0rem;
+            margin-bottom: -1rem;
         }
     
         .login-container {
@@ -154,7 +154,7 @@ button:hover {
             width: 100%;
             max-width: 300px; /* Reduz a largura máxima do formulário */
             padding: 0.75rem; /* Reduz o padding */
-            margin-bottom: -4%;
+            margin-bottom: -2%;
         }
     
         h2, h4 {
