@@ -167,7 +167,7 @@ footer {
     width: 80%;
     padding: 0.5rem;
     margin: -1rem;
-    margin-top: -5rem;
+    margin-top: -2rem;
   }
 
   .titulo {
@@ -193,6 +193,6 @@ footer {
 
   footer {
     position: relative;
-    margin-bottom: 10%;
+    margin-bottom: 13%;
   }
 }
