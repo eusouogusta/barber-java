@@ -1,3 +1,5 @@
+/* logar.css */
+
 body {
     display: flex;
     flex-direction: column;
@@ -5,13 +7,10 @@ body {
     margin: 0;
     font-family: Arial, sans-serif;
     color: #ffffff;
-    
-    
 }
 
-
 .back-pag {
-    background: radial-gradient( #13072e, black);
+    background: radial-gradient(#13072e, black);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -22,26 +21,24 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-grow: 1; /* Ocupa o espaço restante na tela */
-    gap: 2rem; /* Espaço entre o logo e o formulário */
+    gap: 2rem;
+    flex-direction: column;
+    padding-top: 1.5rem; /* Adiciona espaço para elevar o conteúdo */
 }
 
-.Logo-logar {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
+/* Logo */
 .img-logo {
     height: 43.75vh;
+    margin-bottom: 0;
 }
 
+/* Container de login */
 .login-container {
     background-color: white;
     padding: 1.875rem;
-    border: 0.1875rem solid black;
+    border: 3px solid black;
     border-radius: 0.5rem;
-    box-shadow: 0 0 1.25rem rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
     width: 21.875rem;
     text-align: center;
 }
@@ -54,11 +51,6 @@ h2, h4 {
     color: black;
     margin-bottom: 1.25rem;
     text-align: left;
-}
-
-.input-group label {
-    display: block;
-    margin-bottom: 0.3125rem;
 }
 
 .input-group input {
@@ -81,35 +73,10 @@ button {
     margin-top: 1.25rem;
 }
 
-button:hover {
-    background-color: #13072e;
-}
-
-.B-entrar, .B-cadastro {
-    border-radius: 0.625rem 2.1875rem;
-}
-
-/* Linha com 'OU' */
 .linha-ou {
     display: flex;
     align-items: center;
-    text-align: center;
     margin: 1.25rem 0;
-}
-
-.linha-ou::before,
-.linha-ou::after {
-    content: "";
-    flex: 1;
-    border-bottom: 1px solid #000;
-    margin: 0 0.625rem;
-}
-
-.linha-ou span {
-    font-weight: bold;
-    padding: 0 0.625rem;
-    color: #000;
-    font-size: 0.875rem;
 }
 
 .forgot-password {
@@ -119,69 +86,43 @@ button:hover {
     width: 100%;
 }
 
-.forgot-password a {
-    display: inline-block;
-    color: #13072e;
-    text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s;
-    margin: 0 auto;
-}
-
-.forgot-password a:hover {
-    color: #ff6347;
-}
-
-/* Estilo para dispositivos móveis */
+/* Responsividade para dispositivos móveis */
 @media (max-width: 768px) {
-    @media (max-width: 768px) {
+    .centralizado {
+        padding-top: 1rem;
+        gap: 1rem; /* Ajusta o espaço entre os componentes */
+    }
 
-        .centralizado {
-            flex-direction: column;
-            margin-top: -1.8rem;
-            margin-bottom: 0%;
-        }
-    
-        .img-logo {
-            margin-top: 0rem;
-            height: 100px; /* Reduz o tamanho do logo */
-            width: auto;
-            margin-bottom: 0rem;
-        }
-    
-        .login-container {
-            width: 100%;
-            max-width: 300px; /* Reduz a largura máxima do formulário */
-            padding: 0.75rem; /* Reduz o padding */
-            margin-bottom: 0%;
-        }
-    
-        h2, h4 {
-            font-size: 0.1rem; /* Reduz o tamanho do texto */
-        }
-    
-        .input-group label, 
-        .input-group input, 
-        button {
-            font-size: 0.775rem; /* Reduz o tamanho das fontes dos inputs e botões */
-            padding: 0.3rem; /* Reduz o padding dos inputs */
-        }
-    
-        button {
-            width: 100%;
-        }
-    
-        footer {
-            margin: 0%;
-            padding: 0rem; /* Reduz o padding do footer */
-        }
+    .img-logo {
+        height: 15vh; /* Reduz a altura da logo */
+        margin-bottom: 0.5rem;
+    }
+
+    .login-container {
+        width: 90%;
+        padding: 1rem; /* Reduz o padding */
+    }
+
+    h2 {
+        font-size: 1.2rem;
+    }
+
+    .input-group label,
+    .input-group input,
+    button {
+        font-size: 0.875rem;
+        padding: 0.5rem; /* Ajusta o padding */
+    }
+
+    button {
+        width: 100%;
     }
 }
+
 footer {
     text-align: center;
     padding: 1.25rem;
     color: #ffffff !important;
-    background-color: transparent !important; /* Cor de fundo sólida */
+    background-color: transparent !important;
     width: 100%;
-    z-index: 1; /* Garante que o footer fique sobre outros elementos */
 }
