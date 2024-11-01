@@ -142,10 +142,10 @@ button:hover {
         }
     
         .img-logo {
-            margin-top: -10rem;
+            margin-top: -15rem;
             height: 10rem;
             width: auto;
-            margin-bottom: -3rem;
+            margin-bottom: 0rem;
         }
     
         .login-container {
