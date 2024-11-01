@@ -98,7 +98,16 @@ body {
     position: absolute;
     top: 10dvh;
     left: 25dvh;
+    display: flex;
+    justify-content: start; /* Alinha o botão à esquerda */
+    margin: 20px 0;
 }
+#backButton {
+    padding: 10px 15px;
+    border-radius: 5px;
+    border-radius: 0.625rem 2.1875rem;
+  }
+
 
 .button-login {
     position: absolute;

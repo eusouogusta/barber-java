@@ -89,12 +89,29 @@ body {
   border-radius: 0.375rem;
   padding: 0.5rem;
 }
+.corpo1 {
+  background-color: #f8f9fa; /* Define uma cor de fundo leve */
+  padding: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.botao-v {
+  display: flex;
+  justify-content: start; /* Alinha o botão à esquerda */
+  margin: 20px 0;
+}
+
+#backButton {
+  padding: 10px 15px;
+  border-radius: 0.625rem 2.1875rem;
+}
+
 
 .botao {
   width: 100%;
   background-color: hsl(var(--primary));
   color: hsl(var(--primary-foreground));
-  border-radius: 10rem 30rem;
+  border-radius: 0.625rem 2.1875rem;
   margin-top: 20px;
   padding: 0.5rem;
   text-align: center;
