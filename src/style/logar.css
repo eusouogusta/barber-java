@@ -133,6 +133,11 @@ button:hover {
 /* Estilo para dispositivos móveis */
 @media (max-width: 768px) {
     @media (max-width: 768px) {
+
+        body {
+            overflow: hidden; /* Bloqueia a rolagem da página */
+          }
+          
         .centralizado {
             flex-direction: column;
         }

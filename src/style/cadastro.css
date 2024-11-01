@@ -152,7 +152,12 @@ footer {
 /* Estilos para dispositivos móveis */
 @media (max-width: 768px) {
 
+  body {
+    overflow: hidden; /* Bloqueia a rolagem da página */
+  }
+
   .imagem-mobile {
+    margin-top: 1px;
     display: block;
     width: 10px;
     height: auto;
