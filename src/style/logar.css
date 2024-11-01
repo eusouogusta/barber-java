@@ -1,12 +1,12 @@
 body {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 90vh;
+    flex-direction: column;
+    min-height: 100vh;
     margin: 0;
     font-family: Arial, sans-serif;
     color: #ffffff;
 }
+
 
 .back-pag {
     background: radial-gradient( #13072e, black);
@@ -19,6 +19,8 @@ body {
 .centralizado {
     display: flex;
     align-items: center;
+    justify-content: center;
+    flex-grow: 1; /* Ocupa o espaço restante na tela */
     gap: 2rem; /* Espaço entre o logo e o formulário */
 }
 
@@ -156,9 +158,8 @@ footer {
     text-align: center;
     padding: 1.25rem;
     color: white;
-    background-color: transparent; 
-    position: fixed; 
-    bottom: 0; 
-    left: 0; 
-    right: 0; 
+    background-color: transparent;
+    position: relative; /* Remove o position: fixed */
+    bottom: 0;
+    width: 100%;
 }
