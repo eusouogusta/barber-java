@@ -138,6 +138,7 @@ button:hover {
 
         .centralizado {
             flex-direction: column;
+            margin-top: -1rem;
         }
     
         .img-logo {
