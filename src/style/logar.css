@@ -1,17 +1,14 @@
 body {
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
     margin: 0;
     font-family: Arial, sans-serif;
     color: #ffffff;
-    
-    
+    overflow: hidden; /* Bloqueia a rolagem da página */
 }
 
-
 .back-pag {
-    background: radial-gradient( #13072e, black);
+    background: radial-gradient(#13072e, black);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -22,8 +19,8 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-grow: 1; /* Ocupa o espaço restante na tela */
-    gap: 2rem; /* Espaço entre o logo e o formulário */
+    gap: 2rem;
+    flex-grow: 1;
 }
 
 .Logo-logar {
@@ -134,47 +131,45 @@ button:hover {
 
 /* Estilo para dispositivos móveis */
 @media (max-width: 768px) {
-    @media (max-width: 768px) {
+    .centralizado {
+        flex-direction: column;
+        margin-top: -2rem; /* Ajusta a posição mais acima */
+    }
 
-        .centralizado {
-            flex-direction: column;
-        }
-    
-        .img-logo {
-            margin-top: 0rem;
-            height: 100px; /* Reduz o tamanho do logo */
-            width: auto;
-            margin-bottom: 0rem;
-        }
-    
-        .login-container {
-            width: 100%;
-            max-width: 300px; /* Reduz a largura máxima do formulário */
-            padding: 0.75rem; /* Reduz o padding */
-            margin-bottom: 0%
-        }
-    
-        h2, h4 {
-            font-size: 0.1rem; /* Reduz o tamanho do texto */
-        }
-    
-        .input-group label, 
-        .input-group input, 
-        button {
-            font-size: 0.775rem; /* Reduz o tamanho das fontes dos inputs e botões */
-            padding: 0.3rem; /* Reduz o padding dos inputs */
-        }
-    
-        button {
-            width: 100%;
-        }
-    
-        footer {
-            margin-top: 0rem;
-            padding: 0.3rem; /* Reduz o padding do footer */
-        }
+    .img-logo {
+        height: 80px; /* Reduz o tamanho do logo */
+        width: auto;
+        margin-bottom: 0.5rem;
+    }
+
+    .login-container {
+        width: 90%; /* Reduz a largura para caber na tela */
+        max-width: 280px;
+        padding: 0.5rem; /* Reduz o padding */
+        margin-top: 0; /* Remove margens extras no topo */
+    }
+
+    h2, h4 {
+        font-size: 1rem; /* Ajuste de tamanho do texto */
+        margin: 0.5rem 0;
+    }
+
+    .input-group label,
+    .input-group input,
+    button {
+        font-size: 0.875rem; /* Reduz o tamanho da fonte dos inputs e botões */
+        padding: 0.5rem; /* Reduz o padding dos inputs */
+    }
+
+    button {
+        width: 100%;
+    }
+
+    footer {
+        padding: 0.75rem; /* Reduz o padding do footer */
     }
 }
+
 footer {
     text-align: center;
     padding: 1.25rem;
