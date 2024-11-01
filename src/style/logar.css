@@ -88,6 +88,10 @@ button {
 
 /* Responsividade para dispositivos móveis */
 @media (max-width: 768px) {
+
+    body{
+        overflow: hidden;
+    }
     .centralizado {
         padding-top: 1rem;
         gap: 1rem; /* Ajusta o espaço entre os componentes */
