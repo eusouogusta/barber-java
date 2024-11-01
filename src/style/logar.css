@@ -168,7 +168,7 @@ button:hover {
         }
     
         footer {
-            padding: 0.75rem; /* Reduz o padding do footer */
+            padding: 0.3rem; /* Reduz o padding do footer */
         }
     }
 }
