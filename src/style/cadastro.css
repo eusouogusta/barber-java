@@ -158,8 +158,8 @@ footer {
     display: block;
     width: 10px;
     height: auto;
-    margin-bottom: -2.75rem;
-    margin-top: 2rem;
+    margin-bottom: -2.30rem;
+    margin-top: 1rem;
     padding: 2rem;
   }
 
@@ -193,7 +193,7 @@ footer {
   }
 
   footer {
-    position: block;
-    margin-bottom: 2%;
+    position: relative;
+    margin-bottom: 8%;
   }
 }
