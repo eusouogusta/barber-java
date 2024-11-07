@@ -15,6 +15,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.time.Instant;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
 import java.util.Optional;
 
 @RestController
@@ -32,6 +35,7 @@ public class AgendamentoController {
         System.out.println("agendamento recebido " + agendamento);
         Agendamento a = new Agendamento();
         BeanUtils.copyProperties(agendamento, a);
+        a.setData(a.getData().minusHours(3));
         Optional<Usuario> usuarioBuscado = usuarioRepository.findById(agendamento.id_usuario());
         a.setUsuario(usuarioBuscado.get());
 
